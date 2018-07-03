@@ -381,12 +381,14 @@
 <li><p>利用 npm 命令即可安装。在任意位置点击鼠标右键，选择Git Bash</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1531909-ed306496f5c34312.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/237" alt=""></p>
 </li>
-<li><p>输入命令：npm install -g hexo</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1531909-0b9d56643f6b27cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/648" alt=""></p>
-<p><code>注意：-g是指全局安装hexo。</code></p>
+<li><p>输入命令：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="第四步：初始化Hexo"><a href="#第四步：初始化Hexo" class="headerlink" title="第四步：初始化Hexo"></a>第四步：初始化Hexo</h3><ul>
+<pre><code>![](https://upload-images.jianshu.io/upload_images/1531909-0b9d56643f6b27cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/648)
+
+` 注意：-g是指全局安装hexo。`
+</code></pre><h3 id="第四步：初始化Hexo"><a href="#第四步：初始化Hexo" class="headerlink" title="第四步：初始化Hexo"></a>第四步：初始化Hexo</h3><ul>
 <li><p>创建文件夹（我的是在E盘创建的Hexo）</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1531909-b4cfc9da3f2063b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/650" alt=""></p>
 <p><code>根据个人爱好创建博客文件夹</code> </p>
@@ -400,12 +402,16 @@
 <li><p>在_config.yml,进行基础配置</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1531909-cd5743eda172deca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/663" alt=""></p>
 <p>其中可以在这里浏览更多<a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题</a>，然后在Hexo文件夹下 Git Bash</p>
-<p>输入命令：git clone  <a href="https://github.com/iissnan/hexo-theme-next/" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next/</a> [next为主题名字]，来获得更多主题</p>
+<p>输入命令：</p>
+<pre><code class="bash">git <span class="built_in">clone</span>  https://github.com/iissnan/hexo-theme-next/ [next为主题名字]，来获得更多主题
+</code></pre>
 </li>
 <li><p>本地浏览博客</p>
 <p>分别输入 如下命令：</p>
-<p>  hexo g</p>
-<p>  hexo s</p>
+<pre><code class="bash">hexo g
+</code></pre>
+<pre><code class="bash">hexo s
+</code></pre>
 <p>这里有更多<a href="https://segmentfault.com/a/1190000002632530" target="_blank" rel="noopener">hexo常用命令</a></p>
 <ul>
 <li><p>写文章</p>
@@ -422,7 +428,10 @@
 <li><p>_config.yml进行配置</p>
 </li>
 <li><p>发布到Github</p>
-<p>输入如下命令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d<br><img src="https://upload-images.jianshu.io/upload_images/1531909-72b3c30ffbfb1210.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/274" alt="s"><br><img src="https://upload-images.jianshu.io/upload_images/1531909-1f99441c5f2e0cfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/359" alt="s"></p>
+<p>输入如下命令：</p>
+<pre><code class="bash">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/1531909-72b3c30ffbfb1210.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/274" alt="s"><br><img src="https://upload-images.jianshu.io/upload_images/1531909-1f99441c5f2e0cfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/359" alt="s"></p>
 </li>
 <li><p>测试访问</p>
 <p>在浏览器输入：<a href="https://xxxxx.github.io/" target="_blank" rel="noopener">https://xxxxx.github.io/</a></p>
