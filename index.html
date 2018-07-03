@@ -357,76 +357,8 @@
         
           
             <h1 id="如何使用github搭建个人博客"><a href="#如何使用github搭建个人博客" class="headerlink" title="如何使用github搭建个人博客"></a>如何使用github搭建个人博客</h1><h2 id="安装git和注册github账号"><a href="#安装git和注册github账号" class="headerlink" title="安装git和注册github账号"></a>安装git和注册github账号</h2><h3 id="第一步：安装下载git"><a href="#第一步：安装下载git" class="headerlink" title="第一步：安装下载git"></a>第一步：安装下载git</h3><ul>
-<li><p>下载<a href="https://git-for-windows.github.io/" target="_blank" rel="noopener">git</a></p>
-</li>
-<li><p>安装git及步骤</p>
-<ul>
-<li>全选</li>
-</ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/1531909-4da9b2db5ad099b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/519" alt="git_image"></p>
-<ul>
-<li>选择圈住的部分</li>
-</ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/1531909-44bddccbb0bc44fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/483" alt="git_image"></p>
-<p><code>余下的一路默认</code></p>
-</li>
-</ul>
-<h3 id="第二步：安装node-js"><a href="#第二步：安装node-js" class="headerlink" title="第二步：安装node.js"></a>第二步：安装node.js</h3><ul>
-<li><p>node.js下载 <a href="https://nodejs.org/en/" target="_blank" rel="noopener">下载地址</a></p>
-</li>
-<li><p>安装步骤：一路默认即可</p>
-</li>
-</ul>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><ul>
-<li><p>利用 npm 命令即可安装。在任意位置点击鼠标右键，选择Git Bash</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1531909-ed306496f5c34312.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/237" alt=""></p>
-</li>
-<li><p>输入命令：npm install -g hexo</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1531909-0b9d56643f6b27cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/648" alt=""></p>
-<p><code>注意：-g是指全局安装hexo。</code></p>
-</li>
-</ul>
-<h3 id="第四步：初始化Hexo"><a href="#第四步：初始化Hexo" class="headerlink" title="第四步：初始化Hexo"></a>第四步：初始化Hexo</h3><ul>
-<li><p>创建文件夹（我的是在E盘创建的Hexo）</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1531909-b4cfc9da3f2063b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/650" alt=""></p>
-<p><code>根据个人爱好创建博客文件夹</code> </p>
-</li>
-<li><p>在Hexo文件下，右键运行Git Bash，输入命令：hexo init</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1531909-f6ae9b7089741c89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p>
-<p><code>这里可能时间会长些，要耐心等待</code></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1531909-d0452912537c03e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/658" alt=""></p>
-<p> <code>初始化成功后生成的一些列文件</code></p>
-</li>
-<li><p>在_config.yml,进行基础配置</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1531909-cd5743eda172deca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/663" alt=""></p>
-<p>其中可以在这里浏览更多<a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题</a>，然后在Hexo文件夹下 Git Bash</p>
-<p>输入命令：git clone  <a href="https://github.com/iissnan/hexo-theme-next/" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next/</a> [next为主题名字]，来获得更多主题</p>
-</li>
-<li><p>本地浏览博客</p>
-<p>分别输入 如下命令：</p>
-<p>  hexo g</p>
-<p>  hexo s</p>
-<p>这里有更多<a href="https://segmentfault.com/a/1190000002632530" target="_blank" rel="noopener">hexo常用命令</a></p>
-<ul>
-<li><p>写文章</p>
-<p>在E:\Hexo\source_posts文件下，新建.md文件就可以写文章\<br><img src="https://upload-images.jianshu.io/upload_images/1531909-f369abde30af73e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/478" alt=""></p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="部署到Github上"><a href="#部署到Github上" class="headerlink" title="部署到Github上"></a>部署到Github上</h3><ul>
-<li><p>申请Github账号，（注意别忘了进行账号邮箱验证） <code>一般使用的是Google邮箱</code></p>
-</li>
-<li><p>new repository\<br><img src="https://upload-images.jianshu.io/upload_images/1531909-8decffce7d3866b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/494" alt="">\</p>
-</li>
-<li><p>_config.yml进行配置</p>
-</li>
-<li><p>发布到Github</p>
-<p>输入如下命令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d\<br><img src="https://upload-images.jianshu.io/upload_images/1531909-72b3c30ffbfb1210.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/274" alt="s">\<br><img src="https://upload-images.jianshu.io/upload_images/1531909-1f99441c5f2e0cfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/359" alt="s"></p>
-</li>
-<li><p>测试访问</p>
-<p>在浏览器输入：<a href="https://xxxxx.github.io/" target="_blank" rel="noopener">https://xxxxx.github.io/</a></p>
-</li>
+<li>下载<a href="https://git-for-windows.github.io/" target="_blank" rel="noopener">git</a></li>
+<li>安装git</li>
 </ul>
 
           
