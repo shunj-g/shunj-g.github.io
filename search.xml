@@ -3,6 +3,21 @@
   
     
     <entry>
+      <title>关于java的NIO的理解</title>
+      <link href="/2018/07/07/%E5%85%B3%E4%BA%8EJavaNIO%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/"/>
+      <url>/2018/07/07/%E5%85%B3%E4%BA%8EJavaNIO%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/</url>
+      <content type="html"><![CDATA[<h1 id="1-传统的I-O"><a href="#1-传统的I-O" class="headerlink" title="1.传统的I/O"></a>1.传统的I/O</h1><p>&nbsp;&nbsp;使用传统的I/O程序读取文件内容, 并写入到另一个文件(或Socket), 如下程序:<br>File.read(fileDesc, buf, len);<br>Socket.send(socket, buf, len);<br>会有较大的性能开销, 主要表现在一下两方面:  </p><ol><li>上下文切换(context switch), 此处有4次用户态和内核态的切换  </li><li>Buffer内存开销, 一个是应用程序buffer, 另一个是系统读取buffer以及socket buffer<br>其运行示意图如下:  </li></ol>]]></content>
+      
+      
+        <tags>
+            
+            <tag> -Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>如何使用github搭建个人博客</title>
       <link href="/2018/07/03/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
       <url>/2018/07/03/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
