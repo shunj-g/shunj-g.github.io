@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-07T09:20:11.620Z</updated>
+  <updated>2018-07-07T09:23:53.281Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2018/07/07/%E5%85%B3%E4%BA%8EJavaNIO%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/"/>
     <id>http://yoursite.com/2018/07/07/关于JavaNIO的一些理解/</id>
     <published>2018-07-07T08:49:37.402Z</published>
-    <updated>2018-07-07T09:20:11.620Z</updated>
+    <updated>2018-07-07T09:23:53.281Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-传统的I-O"><a href="#1-传统的I-O" class="headerlink" title="1.传统的I/O"></a>1.传统的I/O</h1><p>&nbsp;&nbsp;使用传统的I/O程序读取文件内容, 并写入到另一个文件(或Socket), 如下程序:<br>File.read(fileDesc, buf, len);<br>Socket.send(socket, buf, len);<br>会有较大的性能开销, 主要表现在一下两方面:  </p><ol><li>上下文切换(context switch), 此处有4次用户态和内核态的切换  </li><li>Buffer内存开销, 一个是应用程序buffer, 另一个是系统读取buffer以及socket buffer<br>其运行示意图如下:  </li></ol><p><img src="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/02/NIO/001.png" alt="git_image">  </p><p>&nbsp;&nbsp;1) 先将文件内容从磁盘中拷贝到操作系统buffer.<br>&nbsp;&nbsp;2) 再从操作系统buffer拷贝到程序应用buffer.<br>&nbsp;&nbsp;3) 从程序buffer拷贝到socket buffer.<br>&nbsp;&nbsp;4) 从socket buffer拷贝到协议引擎.  </p><h1 id="2-NIO"><a href="#2-NIO" class="headerlink" title="2. NIO"></a>2. NIO</h1><p>&nbsp;&nbsp;NIO技术省去了将操作系统的read buffer拷贝到程序的buffer, 以及从程序buffer拷贝到socket buffer的步骤, 直接将 read buffer 拷贝到 socket buffer. java 的 FileChannel.transferTo() 方法就是这样的实现, 这个实现是依赖于操作系统底层的sendFile()实现的.<br>publicvoid transferTo(long position, long count, WritableByteChannel target);<br>他的底层调用的是系统调用sendFile()方法<br>sendfile(int out_fd, int in_fd, off_t *offset, size_t count);<br>如下图</p>]]></content>
     
