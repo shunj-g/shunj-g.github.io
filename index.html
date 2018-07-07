@@ -445,7 +445,7 @@
 </ol>
 <p><img src="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/02/NIO/001.png" alt="git_image">  </p>
 <p>&nbsp;&nbsp;1) 先将文件内容从磁盘中拷贝到操作系统buffer.<br>&nbsp;&nbsp;2) 再从操作系统buffer拷贝到程序应用buffer.<br>&nbsp;&nbsp;3) 从程序buffer拷贝到socket buffer.<br>&nbsp;&nbsp;4) 从socket buffer拷贝到协议引擎.  </p>
-<h1 id="2-NIO"><a href="#2-NIO" class="headerlink" title="2. NIO"></a>2. NIO</h1><p>&nbsp;&nbsp;NIO技术省去了将操作系统的read buffer拷贝到程序的buffer, 以及从程序buffer拷贝到socket buffer的步骤, 直接将 read buffer 拷贝到 socket buffer. java 的 FileChannel.transferTo() 方法就是这样的实现, 这个实现是依赖于操作系统底层的sendFile()实现的.<br>publicvoid transferTo(long position, long count, WritableByteChannel target);<br>他的底层调用的是系统调用sendFile()方法<br>sendfile(int out_fd, int in_fd, off_t *offset, size_t count);<br>如下图</p>
+<h1 id="2-NIO"><a href="#2-NIO" class="headerlink" title="2. NIO"></a>2. NIO</h1><p>&nbsp;&nbsp;NIO技术省去了将操作系统的read buffer拷贝到程序的buffer, 以及从程序buffer拷贝到socket buffer的步骤, 直接将 read buffer 拷贝到 socket buffer. java 的 FileChannel.transferTo() 方法就是这样的实现, 这个实现是依赖于操作系统底层的sendFile()实现的.<br>publicvoid transferTo(long position, long count, WritableByteChannel target);<br>他的底层调用的是系统调用sendFile()方法<br>sendfile(int out_fd, int in_fd, off_t *offset, size_t count);<br>如下图<br><img src="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/02/NIO/002.png" alt="git_image"></p>
 
           
         
