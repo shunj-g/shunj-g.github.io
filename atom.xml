@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-09T14:13:39.769Z</updated>
+  <updated>2018-07-09T14:15:34.387Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2018/07/09/Adaboosting/"/>
     <id>http://yoursite.com/2018/07/09/Adaboosting/</id>
     <published>2018-07-09T13:50:01.378Z</published>
-    <updated>2018-07-09T14:13:39.769Z</updated>
+    <updated>2018-07-09T14:15:34.387Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h1><p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>  假设给出样本的形式为<br>    $$c = \sqrt{a^{2}+b_{xy}^{2} +e^{x}}$$</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h1><p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>  假设给出样本的形式为$$X =(x_1,x_2,\cdots,x_d)$$,每个样本对应一个决策值$$Y=y$$</p>]]></content>
     
     <summary type="html">
     
