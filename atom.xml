@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-07T09:27:30.332Z</updated>
+  <updated>2018-07-09T14:13:39.769Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于Adaboost的原理的理解</title>
+    <link href="http://yoursite.com/2018/07/09/Adaboosting/"/>
+    <id>http://yoursite.com/2018/07/09/Adaboosting/</id>
+    <published>2018-07-09T13:50:01.378Z</published>
+    <updated>2018-07-09T14:13:39.769Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h1><p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>  假设给出样本的形式为<br>    $$c = \sqrt{a^{2}+b_{xy}^{2} +e^{x}}$$</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;算法流程&quot;&gt;&lt;a href=&quot;#算法流程&quot; class=&quot;headerlink&quot; title=&quot;算法流程&quot;&gt;&lt;/a&gt;算法流程&lt;/h1&gt;&lt;p&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mat
+      
+    
+    </summary>
+    
+    
+      <category term="Machine Learning" scheme="http://yoursite.com/tags/Machine-Learning/"/>
+    
+      <category term="Adaboost" scheme="http://yoursite.com/tags/Adaboost/"/>
+    
+  </entry>
   
   <entry>
     <title>关于java的NIO的理解</title>
