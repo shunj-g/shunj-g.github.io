@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="我的技术博客">
 <meta property="og:description" content="引言EM算法也称期望最大化（Expectation-Maximum,简称EM）算法，它是一个基础算法，是很多机器学习领域算法的基础，比如隐式马尔科夫算法（HMM）， LDA主题模型的变分推断等等。本文就对EM算法的原理做一个总结。我们经常会从样本观察数据中，找出样本的模型参数。 最常用的方法就是极大化模型分布的对数似然函数。 　　　　但是在一些情况下，我们得到的观察数据有未观察到的隐含数据，此时我">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-12T13:52:02.137Z">
+<meta property="og:updated_time" content="2018-07-12T14:01:31.735Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EM算法原理的理解">
 <meta name="twitter:description" content="引言EM算法也称期望最大化（Expectation-Maximum,简称EM）算法，它是一个基础算法，是很多机器学习领域算法的基础，比如隐式马尔科夫算法（HMM）， LDA主题模型的变分推断等等。本文就对EM算法的原理做一个总结。我们经常会从样本观察数据中，找出样本的模型参数。 最常用的方法就是极大化模型分布的对数似然函数。 　　　　但是在一些情况下，我们得到的观察数据有未观察到的隐含数据，此时我">
@@ -448,7 +448,7 @@
 <h1 id="EM算法的推导"><a href="#EM算法的推导" class="headerlink" title="EM算法的推导"></a>EM算法的推导</h1><p>对于$m$个样本观察数据$x=(x^{(1)},x^{(2)},…x^{(m)})$，找出样本的模型参数$θ$, 极大化模型分布的对数似然函数如下：</p>
 <script type="math/tex; mode=display">\begin{align}\theta = arg \max \limits_{\theta}\sum\limits_{i=1}^m logP(x^{(i)}|\theta)\end{align}</script><p>如果我们得到的观察数据有未观察到的隐含数据$z=(z^{(1)},z^{(2)},…z^{(m)})$，此时我们的极大化模型分布的对数似然函数如下：</p>
 <script type="math/tex; mode=display">\begin{align}\theta = arg \max \limits_{\theta}\sum\limits_{i=1}^m logP(x^{(i)}|\theta) = arg \max \limits_{\theta}\sum\limits_{i=1}^m log\sum\limits_{z^{(i)}}P(x^{(i)}， z^{(i)}|\theta)\end{align}</script><p>上面这个式子是没有 办法直接求出$θ$的。因此需要一些特殊的技巧，我们首先对这个式子进行缩放如下：</p>
-<script type="math/tex; mode=display">\begin{align} \sum\limits_{i=1}^m log\sum\limits_{z^{(i)}}P(x^{(i)}， z^{(i)}|\theta)   & = \sum\limits_{i=1}^m log\sum\limits_{z^{(i)}}Q_i(z^{(i)})\frac{P(x^{(i)}， z^{(i)}|\theta)}{Q_i(z^{(i)})} \\  \end{align} \.......(1)</script><script type="math/tex; mode=display">\begin{align}  & & & & & & & & & & & &\geq  \sum\limits_{i=1}^m \sum\limits_{z^{(i)}}Q_i(z^{(i)})log\frac{P(x^{(i)}， z^{(i)}|\theta)}{Q_i(z^{(i)})} \end{align}\........(2)</script><p>　上面第(1)式引入了一个未知的新的分布$Q_i(z^{(i)})$，第(2)式用到了$Jensen$不等式：<script type="math/tex">\begin{align} log\sum\limits_j\lambda_jy_j \geq \sum\limits_j\lambda_jlogy_j\;\;,  \lambda_j \geq 0, \sum\limits_j\lambda_j =1\end{align}</script><br>或者说由于对数函数是凹函数，所以有:</p>
+<script type="math/tex; mode=display">\begin{align} \sum\limits_{i=1}^m log\sum\limits_{z^{(i)}}P(x^{(i)}， z^{(i)}|\theta)   & = \sum\limits_{i=1}^m log\sum\limits_{z^{(i)}}Q_i(z^{(i)})\frac{P(x^{(i)}， z^{(i)}|\theta)}{Q_i(z^{(i)})} \\  \end{align} .......(1)</script><script type="math/tex; mode=display">\begin{align}  & & & & & & & & & & & &\geq  \sum\limits_{i=1}^m \sum\limits_{z^{(i)}}Q_i(z^{(i)})log\frac{P(x^{(i)}， z^{(i)}|\theta)}{Q_i(z^{(i)})} \end{align}........(2)</script><p>　上面第(1)式引入了一个未知的新的分布$Q_i(z^{(i)})$，第(2)式用到了$Jensen$不等式：<script type="math/tex">\begin{align} log\sum\limits_j\lambda_jy_j \geq \sum\limits_j\lambda_jlogy_j\;\;,  \lambda_j \geq 0, \sum\limits_j\lambda_j =1\end{align}</script><br>或者说由于对数函数是凹函数，所以有:</p>
 <script type="math/tex; mode=display">f(E(x)) \geq E(f(x))\;\;如果f(x) 是凹函数</script><p>此时如果要满足Jensen不等式的等号，则有：</p>
 <script type="math/tex; mode=display">\frac{P(x^{(i)}， z^{(i)}|\theta)}{Q_i(z^{(i)})} =c, c为常数</script><p>　由于$Q_i(z^{(i)})$是一个分布，所以满足：</p>
 <script type="math/tex; mode=display">\sum\limits_{z}Q_i(z^{(i)}) =1</script><p>　从上面两式，我们可以得到：</p>
@@ -459,19 +459,19 @@
 
 # EM算法流程
 现在我们总结下EM算法的流程。
-　　　　输入：观察数据$x=(x^{(1)},x^{(2)},...x^{(m)})$，联合分布$p(x,z |\theta)$条件分布$p(z|x, \theta)$最大迭代次数$J$。
+输入：观察数据$x=(x^{(1)},x^{(2)},...x^{(m)})$，联合分布$p(x,z |\theta)$条件分布$p(z|x, \theta)$最大迭代次数$J$。
 1) 随机初始化模型参数θ的初值$\theta^{0}$
 2） for j  from 1 to J开始EM算法迭代：
-                   a) E步：计算联合分布的条件概率期望：
-$$Q_i(z^{(i)}) = P( z^{(i)}|x^{(i)}，\theta^{j}))</script><script type="math/tex; mode=display">L(\theta, \theta^{j}) = \sum\limits_{i=1}^m\sum\limits_{z^{(i)}}Q_i(z^{(i)})log{P(x^{(i)}， z^{(i)}|\theta)}</script><pre><code>              b) M步：极大化$L(\theta, \theta^{j})$,得到$\theta^{j+1}$
-</code></pre><script type="math/tex; mode=display">\theta^{j+1} = arg \max \limits_{\theta}L(\theta, \theta^{j})</script><p>　c) 如果$θ^{j+1}$已收敛，则算法结束。否则继续回到步骤a)进行E步迭代。<br>输出：模型参数$θ$。</p>
+   a) E步：计算联合分布的条件概率期望：
+$$Q_i(z^{(i)}) = P( z^{(i)}|x^{(i)}，\theta^{j}))</script><script type="math/tex; mode=display">L(\theta, \theta^{j}) = \sum\limits_{i=1}^m\sum\limits_{z^{(i)}}Q_i(z^{(i)})log{P(x^{(i)}， z^{(i)}|\theta)}</script><p>   b) M步：极大化$L(\theta, \theta^{j})$,得到$\theta^{j+1}$</p>
+<script type="math/tex; mode=display">\theta^{j+1} = arg \max \limits_{\theta}L(\theta, \theta^{j})</script><p>　 c) 如果$θ^{j+1}$已收敛，则算法结束。否则继续回到步骤a)进行E步迭代。<br>输出：模型参数$θ$。</p>
 <h1 id="EM算法的收敛性思考"><a href="#EM算法的收敛性思考" class="headerlink" title="EM算法的收敛性思考"></a>EM算法的收敛性思考</h1><p>EM算法的流程并不复杂，但是还有两个问题需要我们思考：<br>　　　　1） EM算法能保证收敛吗？<br>　　　　2） EM算法如果收敛，那么能保证收敛到全局最大值吗？　　<br>　　　　首先我们来看第一个问题, EM算法的收敛性。要证明EM算法收敛，则我们需要证明我们的对数似然函数的值在迭代的过程中一直在增大。即：</p>
 <script type="math/tex; mode=display">\sum\limits_{i=1}^m logP(x^{(i)}|\theta^{j+1}) \geq \sum\limits_{i=1}^m logP(x^{(i)}|\theta^{j})</script><p>由于</p>
 <script type="math/tex; mode=display">L(\theta, \theta^{j}) = \sum\limits_{i=1}^m\sum\limits_{z^{(i)}}P( z^{(i)}|x^{(i)}，\theta^{j}))log{P(x^{(i)}， z^{(i)}|\theta)}</script><p>　令：<script type="math/tex">H(\theta, \theta^{j}) =  \sum\limits_{i=1}^m\sum\limits_{z^{(i)}}P( z^{(i)}|x^{(i)}，\theta^{j}))log{P( z^{(i)}|x^{(i)}，\theta)}</script><br>上两式相减得到：</p>
 <script type="math/tex; mode=display">\sum\limits_{i=1}^m logP(x^{(i)}|\theta) = L(\theta, \theta^{j}) - H(\theta, \theta^{j})</script><p>在上式中分别取$θ$为$θ^j$和$θ^{j+1}$并相减得到：</p>
 <script type="math/tex; mode=display">\sum\limits_{i=1}^m logP(x^{(i)}|\theta^{j+1})  - \sum\limits_{i=1}^m logP(x^{(i)}|\theta^{j}) = [L(\theta^{j+1}, \theta^{j}) - L(\theta^{j}, \theta^{j}) ] -[H(\theta^{j+1}, \theta^{j}) - H(\theta^{j}, \theta^{j}) ]</script><p>要证明EM算法的收敛性，我们只需要证明上式的右边是非负的即可。<br>由于$θ^{j+1}$使得$L(\theta, \theta^{j})$极大，因此有:</p>
 <script type="math/tex; mode=display">L(\theta^{j+1}, \theta^{j}) - L(\theta^{j}, \theta^{j})  \geq 0</script><p>而对于第二部分，我们有：</p>
-<script type="math/tex; mode=display">\begin{align} H(\theta^{j+1}, \theta^{j}) - H(\theta^{j}, \theta^{j})  & = \sum\limits_{i=1}^m\sum\limits_{z^{(i)}}P( z^{(i)}|x^{(i)}，\theta^{j})log\frac{P( z^{(i)}|x^{(i)}，\theta^{j+1})}{P( z^{(i)}|x^{(i)}，\theta^j)} \\ \end{align}\...... (4)</script><script type="math/tex; mode=display">\begin{align}  & & & & & & & & & & & & \leq  \sum\limits_{i=1}^mlog(\sum\limits_{z^{(i)}}P( z^{(i)}|x^{(i)}，\theta^{j})\frac{P( z^{(i)}|x^{(i)}，\theta^{j+1})}{P( z^{(i)}|x^{(i)}，\theta^j)}) \\ \end{align} \...... (5)</script><script type="math/tex; mode=display">\begin{align}  & & & & & & & &  = \sum\limits_{i=1}^mlog(\sum\limits_{z^{(i)}}P( z^{(i)}|x^{(i)}，\theta^{j+1})) = 0  \end{align}\...... (6)</script><p>其中第（4）式用到了Jensen不等式，只不过和第二节的使用相反而已，第（5）式用到了概率分布累积为1的性质。<br>　　　　至此，我们得到了：$\sum\limits_{i=1}^m logP(x^{(i)}|\theta^{j+1})  - \sum\limits_{i=1}^m logP(x^{(i)}|\theta^{j})  \geq 0$, 证明了EM算法的收敛性。<br>从上面的推导可以看出，EM算法可以保证收敛到一个稳定点，但是却不能保证收敛到全局的极大值点，因此它是局部最优的算法，当然，如果我们的优化目标L(θ,θj)是凸的，则EM算法可以保证收敛到全局最大值，这点和梯度下降法这样的迭代算法相同。至此我们也回答了上面提到的第二个问题。</p>
+<script type="math/tex; mode=display">\begin{align} H(\theta^{j+1}, \theta^{j}) - H(\theta^{j}, \theta^{j})  & = \sum\limits_{i=1}^m\sum\limits_{z^{(i)}}P( z^{(i)}|x^{(i)}，\theta^{j})log\frac{P( z^{(i)}|x^{(i)}，\theta^{j+1})}{P( z^{(i)}|x^{(i)}，\theta^j)} \\ \end{align}...... (4)</script><script type="math/tex; mode=display">\begin{align}  & & & & & & & & & & & & \leq  \sum\limits_{i=1}^mlog(\sum\limits_{z^{(i)}}P( z^{(i)}|x^{(i)}，\theta^{j})\frac{P( z^{(i)}|x^{(i)}，\theta^{j+1})}{P( z^{(i)}|x^{(i)}，\theta^j)}) \\ \end{align} ...... (5)</script><script type="math/tex; mode=display">\begin{align}  & & & & & & & &  = \sum\limits_{i=1}^mlog(\sum\limits_{z^{(i)}}P( z^{(i)}|x^{(i)}，\theta^{j+1})) = 0  \end{align}...... (6)</script><p>其中第（4）式用到了Jensen不等式，只不过和第二节的使用相反而已，第（5）式用到了概率分布累积为1的性质。<br>　　　　至此，我们得到了：$\sum\limits_{i=1}^m logP(x^{(i)}|\theta^{j+1})  - \sum\limits_{i=1}^m logP(x^{(i)}|\theta^{j})  \geq 0$, 证明了EM算法的收敛性。<br>从上面的推导可以看出，EM算法可以保证收敛到一个稳定点，但是却不能保证收敛到全局的极大值点，因此它是局部最优的算法，当然，如果我们的优化目标L(θ,θj)是凸的，则EM算法可以保证收敛到全局最大值，这点和梯度下降法这样的迭代算法相同。至此我们也回答了上面提到的第二个问题。</p>
 
       
     </div>
