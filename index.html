@@ -403,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,532
+                  1,565
                 </span>
               
 
@@ -459,20 +459,20 @@
 <script type="math/tex; mode=display">\min \limits_{x} \theta_p(x) = \min \limits_{x} \max \limits_{\alpha,\beta:\alpha_i \ge 0} L(x,\alpha,\beta)</script><p>从形式上来看很对称，只不过原始问题是先固定的$L(x,\alpha,\beta)$中的$x$，优化出的参数$\alpha,\beta$，在优化最优$x$，而对偶问题是先固定$\alpha,\beta$，优化出最优的$x$，然后确定参数$\alpha,\beta$<br>定义对偶问题的最优值：</p>
 <script type="math/tex; mode=display">d^* = \max \limits_{\alpha,\beta:\alpha_i \ge 0}\theta_D(\alpha,\beta)</script><h1 id="原始问题和对偶问题的关系"><a href="#原始问题和对偶问题的关系" class="headerlink" title="原始问题和对偶问题的关系"></a>原始问题和对偶问题的关系</h1><blockquote>
 <p><strong>定理</strong>：若原始问题与对偶问题都有最优值，则</p>
-<pre><code>$$d^*= \max \limits_{\alpha,\beta:\alpha_i \ge 0} \min \limits_{x}L(x,\alpha,\beta) \le \min \limits_{x} \max \limits_{\alpha,\beta:\alpha_i \ge 0} L(x,\alpha,\beta) = p^* $$
+<pre><code>$$\hat{d}= \max \limits_{\alpha,\beta:\alpha_i \ge 0} \min \limits_{x}L(x,\alpha,\beta) \le \min \limits_{x} \max \limits_{\alpha,\beta:\alpha_i \ge 0} L(x,\alpha,\beta) = \hat{p} $$
 </code></pre></blockquote>
 <p>证明：对任意的$\alpha,\beta$和$x$，有：</p>
-<script type="math/tex; mode=display">\theta_D(\alpha,\beta) = \min \limits_{x}L(x,\alpha,\beta) \le L(x,\alpha,\beta) \\ \le \max \limits_{\alpha,\beta:\alpha_i \ge 0} L(x,\alpha,\beta) = \min \limits_{x} \theta_p(x)</script><p>即：$\theta_D(\alpha,\beta) \le  \theta_p(x)$<br>由于原始问题与对偶问题都有最优值，所以：$\max \limits_{\alpha,\beta:\alpha_i \ge 0}\theta_D(\alpha,\beta) \le  \min \limits_{x}\theta_p(x)$<br>即：$d^<em> = \max \limits_{\alpha,\beta:\alpha_i \ge 0} \min \limits_{x}L(x,\alpha,\beta) \le \min \limits_{x} \max \limits_{\alpha,\beta:\alpha_i \ge 0} L(x,\alpha,\beta) = p^</em> $<br>也就是说原始问题的最优值不小于对偶问题的最优值，但是我们要通过对偶问题来求解原始问题，就必须使得原始问题的最优值与对偶问题的最优值相等，于是可以得出下面的推论：</p>
+<script type="math/tex; mode=display">\theta_D(\alpha,\beta) = \min \limits_{x}L(x,\alpha,\beta) \le L(x,\alpha,\beta) \\ \le \max \limits_{\alpha,\beta:\alpha_i \ge 0} L(x,\alpha,\beta) = \min \limits_{x} \theta_p(x)</script><p>即：$\theta_D(\alpha,\beta) \le  \theta_p(x)$<br>由于原始问题与对偶问题都有最优值，所以：$\max \limits_{\alpha,\beta:\alpha_i \ge 0}\theta_D(\alpha,\beta) \le  \min \limits_{x}\theta_p(x)$<br>即：$\hat{d} = \max \limits_{\alpha,\beta:\alpha_i \ge 0} \min \limits_{x}L(x,\alpha,\beta) \le \min \limits_{x} \max \limits_{\alpha,\beta:\alpha_i \ge 0} L(x,\alpha,\beta) = \hat{p} $<br>也就是说原始问题的最优值不小于对偶问题的最优值，但是我们要通过对偶问题来求解原始问题，就必须使得原始问题的最优值与对偶问题的最优值相等，于是可以得出下面的推论：</p>
 <blockquote>
-<p><strong> 推论</strong>：设$x^<em>$和$\alpha^</em>，\beta^<em>$分别是原始问题和对偶问题的可行解，如果$d^</em>=p^<em>$ ，那么$x^</em>$和$\alpha^<em>，\beta^</em>$分别是原始问题和对偶问题的最优解。</p>
+<p><strong> 推论</strong>：设$\hat{x}$和$\hat{\alpha}，\hat{\beta}$分别是原始问题和对偶问题的可行解，如果$\hat{d}$ ，那么$\hat{x}$和$\hat{\alpha},\hat{\beta}$分别是原始问题和对偶问题的最优解。</p>
 </blockquote>
-<p>所以，当原始问题和对偶问题的最优值相等：$d^<em>=p^</em>$ ，可以用求解对偶问题来求解原始问题（当然是对偶问题求解比直接求解原始问题简单的情况下），但是到底满足什么样的条件才能使得$d^<em>=p^</em>$，这就是KTT条件的来源</p>
+<p>所以，当原始问题和对偶问题的最优值相等：$\hat{d}=\hat{p}$ ，可以用求解对偶问题来求解原始问题（当然是对偶问题求解比直接求解原始问题简单的情况下），但是到底满足什么样的条件才能使得$\hat{d}=\hat{p}$，这就是KTT条件的来源</p>
 <h1 id="KTT条件"><a href="#KTT条件" class="headerlink" title="KTT条件"></a>KTT条件</h1><blockquote>
-<p><strong> 定理</strong>：对于原始问题和对偶问题，假设函数$f(x)$和$c_i(x)$是凸函数，$h_i(x)$是仿射函数(即由一阶多项式构成的函数，$f(x) =Ax+b$，A是矩阵，$x，b$是向量)；并且假设不等式约束$c_i(x)$是严格可行的，即存在$x$，对所有的$i$有$c_i(x) &lt; 0$，则存在$x^<em>$和$\alpha^</em>，\beta$，使得$x^<em>$ 是原始问题的最优解，$\alpha^</em>，\beta^<em>$是对问题的最优解，并且$d^</em>=p^<em>=L(x^</em>,\alpha^<em>,\beta^</em>)$<br><strong>定理</strong>：对于原始问题和对偶问题，假设函数$f(x)$和$c_i(x)$是凸函数，$h_i(x)$是仿射函数(即由一阶多项式构成的函数，$f(x) =Ax+b$，$A$是矩阵，$x，b$是向量)；并且假设不等式约束$c_i(x)$是严格可行的，即存在$x$，对所有的$i$有$c_i(x) &lt; 0$，则$x^<em>$和$\alpha^</em>,\beta^<em>$分别是原始问题和对偶问题的最优解的充分必要条件是$x^</em>$和$\alpha^*，\beta$，满足下面的$Karush-Kuhn-Tucker(KKT)$     条件:</p>
-<p><script type="math/tex">\begin{aligned} &\nabla _x L(x^*,\alpha^*,\beta^*) =0\newline   &\nabla _{\alpha}L(x^*,\alpha^*,\beta^*) =0  \newline &\nabla _{\beta} L(x^*,\alpha^*,\beta^*) =0\newline &\alpha_i^*c_i(x^*)=0, i=1,2,...,k(KTT对偶互补条件)\newline &c_i(x^*) \le 0,i=1,2...,k \newline &\alpha_i^* \ge 0,i=1,2,...k \newline &h_j(x^*) =0,j=1,2,...,l) \end{aligned}</script>\</p>
+<p><strong> 定理</strong>：对于原始问题和对偶问题，假设函数$f(x)$和$c_i(x)$是凸函数，$h_i(x)$是仿射函数(即由一阶多项式构成的函数，$f(x) =Ax+b$，A是矩阵，$x，b$是向量)；并且假设不等式约束$c_i(x)$是严格可行的，即存在$x$，对所有的$i$有$c_i(x) &lt; 0$，则存在$\hat{x}$和$\hat{\alpha}，\hat{\beta}$，使得$\hat{x}$ 是原始问题的最优解，$\hat{\alpha}，\hat{\beta}$是对问题的最优解，并且$\hat{d}=\hat{p}=L(\hat{x},\hat{\alpha},\hat{\beta})$<br><strong>定理</strong>：对于原始问题和对偶问题，假设函数$f(x)$和$c_i(x)$是凸函数，$h_i(x)$是仿射函数(即由一阶多项式构成的函数，$f(x) =Ax+b$，$A$是矩阵，$x，b$是向量)；并且假设不等式约束$c_i(x)$是严格可行的，即存在$x$，对所有的$i$有$c_i(x) &lt; 0$，则$\hat{x}$和$\hat{\alpha},\hat{\beta}$分别是原始问题和对偶问题的最优解的充分必要条件是$\hat{x}$和$\hat{\alpha}，\hat{\beta}，满足下面的$Karush-Kuhn-Tucker(KKT)$     条件:</p>
+<p><script type="math/tex">\begin{aligned} &\nabla _x L(\hat{x},\hat{\alpha},\hat{\beta}) =0\newline   &\nabla _{\alpha}L(\hat{x},\hat{\alpha},\hat{\beta}) =0  \newline &\nabla _{\beta} L(\hat{x},\hat{\alpha},\hat{\beta}) =0\newline &\hat{\alpha_i}c_i(\hat{x})=0, i=1,2,...,k(KTT对偶互补条件)\newline &c_i(\hat{x}) \le 0,i=1,2...,k \newline &\hat{\alpha_i} \ge 0,i=1,2,...k \newline &h_j(\hat{x}) =0,j=1,2,...,l) \end{aligned}</script>\</p>
 </blockquote>
 <p>关于KKT 条件的理解：前面三个条件是由解析函数的知识，对于各个变量的偏导数为0（这就解释了一开始为什么假设三个函数连续可微，如果不连续可微的话，这里的偏导数存不存在就不能保证），后面四个条件就是原始问题的约束条件以及拉格朗日乘子需要满足的约束。</p>
-<p>特别注意当$\alpha_i^<em> \ge 0$时，由KKT对偶互补条件可知：$c_i(x^</em>) =0$，这个知识点会在$ SVM$ 的推导中用到.</p>
+<p>特别注意当$\hat{\alpha_i}\ge 0$时，由KKT对偶互补条件可知：$c_i(\hat{x}) =0$，这个知识点会在$ SVM$ 的推导中用到.</p>
 
           
         
@@ -1621,7 +1621,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">4.2k</span>
+    <span title="Site words total count">4.3k</span>
   
 </div>
 
