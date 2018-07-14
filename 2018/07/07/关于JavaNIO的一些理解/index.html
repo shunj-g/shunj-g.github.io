@@ -87,7 +87,7 @@
 
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="NIO," />
 
 
 
@@ -101,7 +101,7 @@
 
 
 <meta name="description" content="1.传统的I/O&amp;nbsp;&amp;nbsp;使用传统的I/O程序读取文件内容, 并写入到另一个文件(或Socket), 如下程序:File.read(fileDesc, buf, len);Socket.send(socket, buf, len);会有较大的性能开销, 主要表现在一下两方面:    上下文切换(context switch), 此处有4次用户态和内核态的切换   Buffer内存开销">
-<meta name="keywords" content="Java">
+<meta name="keywords" content="NIO">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于java的NIO的理解">
 <meta property="og:url" content="http://yoursite.com/2018/07/07/关于JavaNIO的一些理解/index.html">
@@ -110,7 +110,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/02/NIO/001.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/02/NIO/002.png">
-<meta property="og:updated_time" content="2018-07-07T09:27:30.332Z">
+<meta property="og:updated_time" content="2018-07-14T05:53:25.335Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于java的NIO的理解">
 <meta name="twitter:description" content="1.传统的I/O&amp;nbsp;&amp;nbsp;使用传统的I/O程序读取文件内容, 并写入到另一个文件(或Socket), 如下程序:File.read(fileDesc, buf, len);Socket.send(socket, buf, len);会有较大的性能开销, 主要表现在一下两方面:    上下文切换(context switch), 此处有4次用户态和内核态的切换   Buffer内存开销">
@@ -380,12 +380,34 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-07T17:27:30+08:00">
-                2018-07-07
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-14T13:53:25+08:00">
+                2018-07-14
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -502,7 +524,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"> <i class="fa fa-tag"></i> Java</a>
+            <a href="/tags/NIO/" rel="tag"> <i class="fa fa-tag"></i> NIO</a>
           
         </div>
       
@@ -619,12 +641,21 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
             
 
             
@@ -632,7 +663,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -655,7 +686,7 @@
 		  <div class="widget-wrap">
 			<div id="myCanvasContainer" class="widget tagcloud">
 				<canvas width="250" height="250" id="resCanvas" style="width=100%">
-					<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Adaboost/">Adaboost</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EM/">EM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li></ul>
+					<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Adaboost/">Adaboost</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EM/">EM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NIO/">NIO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li></ul>
 				</canvas>
 			</div>
 		  </div>
@@ -734,7 +765,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">4.2k</span>
+    <span title="Site words total count">2.7k</span>
   
 </div>
 
