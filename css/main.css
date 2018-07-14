@@ -2032,7 +2032,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff04bd;
+  background: #ffffc8;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3354,7 +3354,7 @@ img:hover {
   }
 }
 body {
-  background: url("https://assets.imgix.net/hp/snowshoe.jpg?auto=compress&w=1600&h=900&fit=crop&crop=focalpoint&fp-debug=1");
+  background: url("https://assets.imgix.net/hp/snowshoe.jpg?auto=compress&w=1600&h=900");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
