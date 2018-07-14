@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="我的技术博客">
 <meta property="og:description" content="引言在机器学习的算法理论推导中，在很多地方会用到拉格朗日乘数法，在支持向量机$SVM(Support Vector Machines)           $  的学习中，我们会接触到对偶问题和KTT条件问题。于是有必要将拉格朗日乘数法与它们内在的联系弄清楚。 约束最优化问题假设$f(x)$，$c_i(x)$，$h_j(x)$是定义在$R^n$上的连续可微函数，考虑约束最优化问题： \begin{">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-13T11:21:07.035Z">
+<meta property="og:updated_time" content="2018-07-14T04:28:20.304Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="拉格朗日乘数法与对偶问题">
 <meta name="twitter:description" content="引言在机器学习的算法理论推导中，在很多地方会用到拉格朗日乘数法，在支持向量机$SVM(Support Vector Machines)           $  的学习中，我们会接触到对偶问题和KTT条件问题。于是有必要将拉格朗日乘数法与它们内在的联系弄清楚。 约束最优化问题假设$f(x)$，$c_i(x)$，$h_j(x)$是定义在$R^n$上的连续可微函数，考虑约束最优化问题： \begin{">
@@ -444,7 +444,7 @@
       
         <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>在机器学习的算法理论推导中，在很多地方会用到拉格朗日乘数法，在支持向量机$SVM(Support Vector Machines)           $  的学习中，我们会接触到对偶问题和KTT条件问题。于是有必要将拉格朗日乘数法与它们内在的联系弄清楚。</p>
 <h1 id="约束最优化问题"><a href="#约束最优化问题" class="headerlink" title="约束最优化问题"></a>约束最优化问题</h1><p>假设$f(x)$，$c_i(x)$，$h_j(x)$是定义在$R^n$上的连续可微函数，考虑约束最优化问题：</p>
-<script type="math/tex; mode=display">\begin{align} &\min \limits_{x \in R^n} f(x) \newline &s.t.c_i(x) \ge0,i=1,2,...,k \newline &h_j(x)=0,j=1,2,...,l \end{align}</script><p>现在如果不考虑约束条件，原始问题就是：</p>
+<script type="math/tex; mode=display">\begin{align} \min \limits_{x \in R^n} &f(x) \newline s.t. &c_i(x) \ge0,i=1,2,...,k \newline &h_j(x)=0,j=1,2,...,l \end{align}</script><p>现在如果不考虑约束条件，原始问题就是：</p>
 <script type="math/tex; mode=display">\min \limits_{x \in R^n}f(x)</script><p>如果其连续可微，利用高等数学的知识，对求导数，然后令导数为0，就可解出最优解，如果加上约束条件，那么就要考虑到使用条件极值来求解，拉格朗日乘数法就是来求解这种约束的极值的。<br>引进广义拉格朗日函数（generalized Lagrange function）:</p>
 <script type="math/tex; mode=display">L(x,\alpha,\beta) = f(x)+\sum_{i=1}^k \alpha_i c_i(x) + \sum_{j=1}^l \beta_j h_j(x)</script><p>其中 $x=(x^{(1)},x^{(2)},…,x^{(n)})^T \in R^n , \alpha_i,\beta_j$是拉格朗日乘子，并且 $\alpha_i \ge 0$<br>现在，我们知道$L(x,\alpha,\beta)$是关于$\alpha_i,\beta_j$的函数，那么通过确定$\alpha_i,\beta_j$的值使得$L(x,\alpha,\beta)$取得最大值(当然在求解的过程中$x$是常量)，确定了$\alpha_i,\beta_i$的值，就可以得到$L(x,\alpha,\beta)$的最大值。当$\alpha_i,\beta_i$确定时，$\max \limits_{\alpha,\beta:\alpha_i \ge 0} L(x,\alpha,\beta)$ 就只和$x$有关的函数了，定义这个函数为：</p>
 <script type="math/tex; mode=display">\theta_p(x) = \max \limits_{\alpha,\beta:\alpha_i \ge 0}L(x,\alpha,\beta)</script><p>其中：</p>
