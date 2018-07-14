@@ -100,20 +100,20 @@
 
 
 
-<meta name="description" content="1.传统的I/O&amp;nbsp;&amp;nbsp;使用传统的I/O程序读取文件内容, 并写入到另一个文件(或Socket), 如下程序:File.read(fileDesc, buf, len);Socket.send(socket, buf, len);会有较大的性能开销, 主要表现在一下两方面:    上下文切换(context switch), 此处有4次用户态和内核态的切换   Buffer内存开销">
+<meta name="description" content="1.传统的I/O&amp;nbsp;&amp;nbsp;使用传统的I/O程序读取文件内容, 并写入到另一个文件(或Socket), 如下程序:File.read(fileDesc, buf, len);Socket.send(socket, buf, len);会有较大的性能开销, 主要表现在一下两方面:&amp;lt; !—more—&amp;gt;   上下文切换(context switch), 此处有4次用户态和内核态的">
 <meta name="keywords" content="NIO">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于java的NIO的理解">
 <meta property="og:url" content="http://yoursite.com/2018/07/07/关于JavaNIO的一些理解/index.html">
 <meta property="og:site_name" content="我的技术博客">
-<meta property="og:description" content="1.传统的I/O&amp;nbsp;&amp;nbsp;使用传统的I/O程序读取文件内容, 并写入到另一个文件(或Socket), 如下程序:File.read(fileDesc, buf, len);Socket.send(socket, buf, len);会有较大的性能开销, 主要表现在一下两方面:    上下文切换(context switch), 此处有4次用户态和内核态的切换   Buffer内存开销">
+<meta property="og:description" content="1.传统的I/O&amp;nbsp;&amp;nbsp;使用传统的I/O程序读取文件内容, 并写入到另一个文件(或Socket), 如下程序:File.read(fileDesc, buf, len);Socket.send(socket, buf, len);会有较大的性能开销, 主要表现在一下两方面:&amp;lt; !—more—&amp;gt;   上下文切换(context switch), 此处有4次用户态和内核态的">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/02/NIO/001.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/02/NIO/002.png">
-<meta property="og:updated_time" content="2018-07-14T05:53:25.335Z">
+<meta property="og:updated_time" content="2018-07-14T06:19:46.389Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于java的NIO的理解">
-<meta name="twitter:description" content="1.传统的I/O&amp;nbsp;&amp;nbsp;使用传统的I/O程序读取文件内容, 并写入到另一个文件(或Socket), 如下程序:File.read(fileDesc, buf, len);Socket.send(socket, buf, len);会有较大的性能开销, 主要表现在一下两方面:    上下文切换(context switch), 此处有4次用户态和内核态的切换   Buffer内存开销">
+<meta name="twitter:description" content="1.传统的I/O&amp;nbsp;&amp;nbsp;使用传统的I/O程序读取文件内容, 并写入到另一个文件(或Socket), 如下程序:File.read(fileDesc, buf, len);Socket.send(socket, buf, len);会有较大的性能开销, 主要表现在一下两方面:&amp;lt; !—more—&amp;gt;   上下文切换(context switch), 此处有4次用户态和内核态的">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/02/NIO/001.png">
 
 
@@ -380,7 +380,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-14T13:53:25+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-14T14:19:46+08:00">
                 2018-07-14
               </time>
             
@@ -447,7 +447,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  287
+                  288
                 </span>
               
 
@@ -484,7 +484,7 @@
       
 
       
-        <h1 id="1-传统的I-O"><a href="#1-传统的I-O" class="headerlink" title="1.传统的I/O"></a>1.传统的I/O</h1><p>&nbsp;&nbsp;使用传统的I/O程序读取文件内容, 并写入到另一个文件(或Socket), 如下程序:<br>File.read(fileDesc, buf, len);<br>Socket.send(socket, buf, len);<br>会有较大的性能开销, 主要表现在一下两方面:  </p>
+        <h1 id="1-传统的I-O"><a href="#1-传统的I-O" class="headerlink" title="1.传统的I/O"></a>1.传统的I/O</h1><p>&nbsp;&nbsp;使用传统的I/O程序读取文件内容, 并写入到另一个文件(或Socket), 如下程序:<br>File.read(fileDesc, buf, len);<br>Socket.send(socket, buf, len);<br>会有较大的性能开销, 主要表现在一下两方面:<br>&lt; !—more—&gt; </p>
 <ol>
 <li>上下文切换(context switch), 此处有4次用户态和内核态的切换  </li>
 <li>Buffer内存开销, 一个是应用程序buffer, 另一个是系统读取buffer以及socket buffer<br>其运行示意图如下:  </li>
@@ -651,10 +651,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                
+                <a href="/categories/index.html">
                   <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
-                
+                </a>
               </div>
             
 
