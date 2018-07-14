@@ -2032,7 +2032,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9aa20b;
+  background: #d61c0d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3370,11 +3370,9 @@ body {
   background: #0684bd;
 }
 .main-inner {
-  margin-top: 60px;
   padding: 60px 60px 60px 60px;
   background: #fff;
   opacity: 0.8;
-  min-height: 500px;
 }
 span#inline-yellow {
   display: inline;
