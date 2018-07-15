@@ -87,7 +87,7 @@
 
 
 
-  <meta name="keywords" content="KTT," />
+  <meta name="keywords" content="markov," />
 
 
 
@@ -100,18 +100,18 @@
 
 
 
-<meta name="description" content="引言在机器学习的算法理论推导中，在很多地方会用到拉格朗日乘数法，在支持向量机$SVM(Support Vector Machines)           $  的学习中，我们会接触到对偶问题和KTT条件问题。于是有必要将拉格朗日乘数法与它们内在的联系弄清楚。 约束最优化问题假设$f(x)$，$c_i(x)$，$h_j(x)$是定义在$R^n$上的连续可微函数，考虑约束最优化问题： \begin{">
-<meta name="keywords" content="KTT">
+<meta name="description" content="引言隐马尔科夫模型是关于时序的概率模型，描述一个隐藏的马尔科夫链随机生成不可观测的状态随机序列，再由各个状态生成一个观测而产生观测随机序列的过程。隐藏的马尔科夫随机生成的状态序列，称为状态序列(state sequence)；每个状态生成一个观测，而由此产生的观测的随机序列(observation sequence).。序列的每一个位置又可以看作一个时刻。隐马尔科夫模型由初始概率分布、状态转移概率">
+<meta name="keywords" content="markov">
 <meta property="og:type" content="article">
-<meta property="og:title" content="拉格朗日乘数法与对偶问题">
-<meta property="og:url" content="http://yoursite.com/2018/07/13/拉格朗日乘数法与对偶问题/index.html">
+<meta property="og:title" content="隐马尔科夫模型">
+<meta property="og:url" content="http://yoursite.com/2018/07/15/隐马尔科夫模型/index.html">
 <meta property="og:site_name" content="我的技术博客">
-<meta property="og:description" content="引言在机器学习的算法理论推导中，在很多地方会用到拉格朗日乘数法，在支持向量机$SVM(Support Vector Machines)           $  的学习中，我们会接触到对偶问题和KTT条件问题。于是有必要将拉格朗日乘数法与它们内在的联系弄清楚。 约束最优化问题假设$f(x)$，$c_i(x)$，$h_j(x)$是定义在$R^n$上的连续可微函数，考虑约束最优化问题： \begin{">
+<meta property="og:description" content="引言隐马尔科夫模型是关于时序的概率模型，描述一个隐藏的马尔科夫链随机生成不可观测的状态随机序列，再由各个状态生成一个观测而产生观测随机序列的过程。隐藏的马尔科夫随机生成的状态序列，称为状态序列(state sequence)；每个状态生成一个观测，而由此产生的观测的随机序列(observation sequence).。序列的每一个位置又可以看作一个时刻。隐马尔科夫模型由初始概率分布、状态转移概率">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-14T06:21:23.740Z">
+<meta property="og:updated_time" content="2018-07-15T08:29:51.207Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="拉格朗日乘数法与对偶问题">
-<meta name="twitter:description" content="引言在机器学习的算法理论推导中，在很多地方会用到拉格朗日乘数法，在支持向量机$SVM(Support Vector Machines)           $  的学习中，我们会接触到对偶问题和KTT条件问题。于是有必要将拉格朗日乘数法与它们内在的联系弄清楚。 约束最优化问题假设$f(x)$，$c_i(x)$，$h_j(x)$是定义在$R^n$上的连续可微函数，考虑约束最优化问题： \begin{">
+<meta name="twitter:title" content="隐马尔科夫模型">
+<meta name="twitter:description" content="引言隐马尔科夫模型是关于时序的概率模型，描述一个隐藏的马尔科夫链随机生成不可观测的状态随机序列，再由各个状态生成一个观测而产生观测随机序列的过程。隐藏的马尔科夫随机生成的状态序列，称为状态序列(state sequence)；每个状态生成一个观测，而由此产生的观测的随机序列(observation sequence).。序列的每一个位置又可以看作一个时刻。隐马尔科夫模型由初始概率分布、状态转移概率">
 
 
 
@@ -141,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/13/拉格朗日乘数法与对偶问题/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/15/隐马尔科夫模型/"/>
 
 
 
 
 
-  <title>拉格朗日乘数法与对偶问题 | 我的技术博客</title>
+  <title>隐马尔科夫模型 | 我的技术博客</title>
   
 
 
@@ -332,7 +332,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/13/拉格朗日乘数法与对偶问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/15/隐马尔科夫模型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="shunj-g">
@@ -349,7 +349,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">拉格朗日乘数法与对偶问题</h1>
+          <h1 class="post-title" itemprop="name headline">隐马尔科夫模型</h1>
         
 
         <div class="post-meta">
@@ -361,8 +361,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-13T18:40:07+08:00">
-                2018-07-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-15T16:30:21+08:00">
+                2018-07-15
               </time>
             
 
@@ -377,8 +377,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-14T14:21:23+08:00">
-                2018-07-14
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-15T16:29:51+08:00">
+                2018-07-15
               </time>
             
           </span>
@@ -413,7 +413,7 @@
 
           
           
-             <span id="/2018/07/13/拉格朗日乘数法与对偶问题/" class="leancloud_visitors" data-flag-title="拉格朗日乘数法与对偶问题">
+             <span id="/2018/07/15/隐马尔科夫模型/" class="leancloud_visitors" data-flag-title="隐马尔科夫模型">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,532
+                  1,035
                 </span>
               
 
@@ -460,7 +460,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  4
                 </span>
               
             </div>
@@ -481,36 +481,19 @@
       
 
       
-        <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>在机器学习的算法理论推导中，在很多地方会用到拉格朗日乘数法，在支持向量机$SVM(Support Vector Machines)           $  的学习中，我们会接触到对偶问题和KTT条件问题。于是有必要将拉格朗日乘数法与它们内在的联系弄清楚。</p>
-<h1 id="约束最优化问题"><a href="#约束最优化问题" class="headerlink" title="约束最优化问题"></a>约束最优化问题</h1><p>假设$f(x)$，$c_i(x)$，$h_j(x)$是定义在$R^n$上的连续可微函数，考虑约束最优化问题：</p>
-<script type="math/tex; mode=display">\begin{align} \min \limits_{x \in R^n} &f(x) \newline s.t. &c_i(x) \ge0,i=1,2,...,k \newline &h_j(x)=0,j=1,2,...,l \end{align}</script><p>现在如果不考虑约束条件，原始问题就是：</p>
-<script type="math/tex; mode=display">\min \limits_{x \in R^n}f(x)</script><p>如果其连续可微，利用高等数学的知识，对求导数，然后令导数为0，就可解出最优解，如果加上约束条件，那么就要考虑到使用条件极值来求解，拉格朗日乘数法就是来求解这种约束的极值的。<br>引进广义拉格朗日函数（generalized Lagrange function）:</p>
-<script type="math/tex; mode=display">L(x,\alpha,\beta) = f(x)+\sum_{i=1}^k \alpha_i c_i(x) + \sum_{j=1}^l \beta_j h_j(x)</script><p>其中 $x=(x^{(1)},x^{(2)},…,x^{(n)})^T \in R^n , \alpha_i,\beta_j$是拉格朗日乘子，并且 $\alpha_i \ge 0$<br>现在，我们知道$L(x,\alpha,\beta)$是关于$\alpha_i,\beta_j$的函数，那么通过确定$\alpha_i,\beta_j$的值使得$L(x,\alpha,\beta)$取得最大值(当然在求解的过程中$x$是常量)，确定了$\alpha_i,\beta_i$的值，就可以得到$L(x,\alpha,\beta)$的最大值。当$\alpha_i,\beta_i$确定时，$\max \limits_{\alpha,\beta:\alpha_i \ge 0} L(x,\alpha,\beta)$ 就只和$x$有关的函数了，定义这个函数为：</p>
-<script type="math/tex; mode=display">\theta_p(x) = \max \limits_{\alpha,\beta:\alpha_i \ge 0}L(x,\alpha,\beta)</script><p>其中：</p>
-<script type="math/tex; mode=display">L(x,\alpha,\beta) = f(x)+\sum_{i=1}^k \alpha_i c_i(x) + \sum_{j=1}^l \beta_j h_j(x)</script><p>下面通过$x$是否满足约束条件，通过两个层面来进行分析这个函数：</p>
-<ul>
-<li>考虑到某个$x$违反了原始的约束，即$c_i(x)&gt;0$或者$h_j(x) \not= 0$，那么：<script type="math/tex; mode=display">\theta_p(x) = \max \limits_{\alpha,\beta:\alpha_i \ge 0}[f(x)+\sum_{i =1}^k \alpha_i c_j(x)+\sum_{j=1}^l \beta_jh_j(x)] = +\infty</script>注意中间最大化的式子就是确定$\alpha_i,\beta_j$的之后的结果，若$c_i(x) &gt; 0$，则令$\alpha_i \to +\infty$，如果$h_j(x) \not= 0$，很容易取值$\beta_j$使得$\beta_jh_j(x) \to +\infty$</li>
-<li>考虑$x$，满足原来的约束，则$\theta_p(x) = \max \limits_{\alpha,\beta:\alpha_i \ge 0}[f(x)] = f(x)$，注意中间的最大化是确定$\alpha_i,\beta_j$的过程，$f(x)$就是个常量，常量的最大值就是本身<br>通过上面可以得出：<script type="math/tex; mode=display">\begin{eqnarray}f(x)=\begin{cases}f(x), &x满足原始问题的约束  \cr +\infty,&其他\end{cases}\end{eqnarray}</script>那么在满足约束条件下：<script type="math/tex; mode=display">\min \limits_{x} \theta_p(x) = \min \limits_{x} \max \limits_{\alpha,\beta:\alpha_i \ge 0} L(x,\alpha,\beta) = \min \limits_{x}f(x)</script>即$\min \limits_{x} \theta_p(x)$与原始的优化问题等价，所以常用$\min \limits_{x} \theta_p(x)$代表原始问题，下表p表示原始问题，定义原始问题的最优值：<script type="math/tex; mode=display">\hat{p} = \min \limits_{x} \theta_p(x)</script></li>
-</ul>
-<h1 id="对偶问题"><a href="#对偶问题" class="headerlink" title="对偶问题"></a>对偶问题</h1><p>定义关于$\alpha,\beta$的函数：</p>
-<script type="math/tex; mode=display">\theta_D(\alpha,\beta) = \min \limits_{x}L(x,\alpha,\beta)</script><p>等式的右边是关于$x$的函数的最小化，$x$确定后，最小值就只与$\alpha,\beta$有关了，所以是一个关于$\alpha,\beta$的函数。<br>考虑到极大化$\theta_D(\alpha,\beta) = \min \limits_{x}L(x,\alpha,\beta)$，即：</p>
-<script type="math/tex; mode=display">\max \limits_{\alpha,\beta:\alpha_i \ge 0} \theta_D(\alpha,\beta) = \max \limits_{\alpha,\beta:\alpha_i \ge 0} \min \limits_{x}L(x,\alpha,\beta)</script><p>这个就是原始问题的对偶问题，那么原始问题的表达式：</p>
-<script type="math/tex; mode=display">\min \limits_{x} \theta_p(x) = \min \limits_{x} \max \limits_{\alpha,\beta:\alpha_i \ge 0} L(x,\alpha,\beta)</script><p>从形式上来看很对称，只不过原始问题是先固定的$L(x,\alpha,\beta)$中的$x$，优化出的参数$\alpha,\beta$，在优化最优$x$，而对偶问题是先固定$\alpha,\beta$，优化出最优的$x$，然后确定参数$\alpha,\beta$<br>定义对偶问题的最优值：</p>
-<script type="math/tex; mode=display">\hat{d}= \max \limits_{\alpha,\beta:\alpha_i \ge 0}\theta_D(\alpha,\beta)</script><h1 id="原始问题和对偶问题的关系"><a href="#原始问题和对偶问题的关系" class="headerlink" title="原始问题和对偶问题的关系"></a>原始问题和对偶问题的关系</h1><blockquote>
-<p><strong>定理</strong>：若原始问题与对偶问题都有最优值，则</p>
-<script type="math/tex; mode=display">\begin{aligned} \hat{d} & = \max \limits_{\alpha,\beta:\alpha_i \ge 0} \min \limits_{x}L(x,\alpha,\beta) \newline &\le \min \limits_{x} \max \limits_{\alpha,\beta:\alpha_i \ge 0} L(x,\alpha,\beta) = \hat{p}\end{aligned}</script></blockquote>
-<p>证明：对任意的$\alpha,\beta$和$x$，有：</p>
-<script type="math/tex; mode=display">\theta_D(\alpha,\beta) = \min \limits_{x}L(x,\alpha,\beta) \le L(x,\alpha,\beta) \\ \le \max \limits_{\alpha,\beta:\alpha_i \ge 0} L(x,\alpha,\beta) = \min \limits_{x} \theta_p(x)</script><p>即：$\theta_D(\alpha,\beta) \le  \theta_p(x)$<br>由于原始问题与对偶问题都有最优值，所以：$\max \limits_{\alpha,\beta:\alpha_i \ge 0}\theta_D(\alpha,\beta) \le  \min \limits_{x}\theta_p(x)$<br>即：$\hat{d} = \max \limits_{\alpha,\beta:\alpha_i \ge 0} \min \limits_{x}L(x,\alpha,\beta) \le \min \limits_{x} \max \limits_{\alpha,\beta:\alpha_i \ge 0} L(x,\alpha,\beta) = \hat{p} $<br>也就是说原始问题的最优值不小于对偶问题的最优值，但是我们要通过对偶问题来求解原始问题，就必须使得原始问题的最优值与对偶问题的最优值相等，于是可以得出下面的推论：</p>
+        <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>隐马尔科夫模型是关于时序的概率模型，描述一个隐藏的马尔科夫链随机生成不可观测的状态随机序列，再由各个状态生成一个观测而产生观测随机序列的过程。隐藏的马尔科夫随机生成的状态序列，称为状态序列(state sequence)；每个状态生成一个观测，而由此产生的观测的随机序列(observation sequence).。序列的每一个位置又可以看作一个时刻。<br>隐马尔科夫模型由初始概率分布、状态转移概率分布以及观测概率分布确定。隐马尔科夫模型形式如下：<br>设$Q$是所有可能的状态的集合，$V$是所有可能的观测的集合</p>
+<script type="math/tex; mode=display">Q={q_1,q_2,...,q_N}，V={v_1,v_2,...,v_M}</script><p>其中，$N$是可能的状态数，$M$是可能的观测数。<br>$I$是长度为$T$的状态序列，$O$是对应的观测序列。</p>
+<script type="math/tex; mode=display">I=(i_1,i_2,...,i_T)，O=(o_1,o_2,...,o_T)</script><p>$A$是状态转移概率矩阵：</p>
+<script type="math/tex; mode=display">A=[a_{ij}]_{N \times M}</script><p>其中，<script type="math/tex">a_{ij}=P(i_{t+1}=q_j|i_t=q_i)，i=1,2,...,N;j=1,2,...,N</script><br>是在时刻$t$处于状态$q_i$条件下载时刻$t+1$转移到状态$q_j$的概率。<br>B 是观测概率矩阵：<script type="math/tex">B=[b_j(k)]_{N \times M}</script><br>其中，<script type="math/tex">b_j(k)=P(o_t=v_k|i_i=q_i)，k=1,2,...,M;j=1,2,...,N</script><br>是在时刻$t$处于状态$q_j$的条件下生产观测$v_k$的概率。<br>$\pi$是初试状态概率向量：<script type="math/tex">\pi=(\pi_i)</script><br>其中，<script type="math/tex">\pi_i=P(i_1=q_i)，i=1,2,..,N</script><br>是时刻$t=1$处于状态$q_i$的概率。<br>隐马尔科夫模型由初试状态概率向量$\pi$，状态转移概率矩阵$A$和观测概率矩阵$B$决定。$\pi$和$A$决定状态序列，$B$决定观测序列。因此，隐马尔科夫模型$\lambda$可以用三元符号表示，即：<script type="math/tex">\lambda=(A,B,\pi)</script><br>$A,B,\pi$称为隐马尔科夫模型的三要素。<br>状态转移概率矩阵$A$与初始状态概率向量$\pi$确定了隐藏的马尔科夫链，生成不可观测的状态序列。观测概率矩阵$B$确定了如何从状态生成观测，与状态序列综合确定了如何产生观测序列。<br>从定义来看，隐马尔科夫模型作了两个基本的假设：<br>(1) 齐次马尔科夫性的假设，即假设隐藏的马尔科夫链在任意时刻$t$的状态只依赖于其前一时刻的状态，与其他时刻的状态及观测无关，也与时刻$t$无关：</p>
+<script type="math/tex; mode=display">P(i_t|i_{t-1},o_{t-1},...,i_1,o_1)=P(i_t|i_{t-1})，t=1,2,...,T</script><p>(2) 观测独立性假设，即假设任意时刻的患侧只依赖于该时刻的马尔科夫链的状态，与其他观测状态无关。</p>
+<script type="math/tex; mode=display">P(o_t|i_T,o_T,i_{T-1},o_{T-1},...,i_{t+1},o_{t+1},i_t,i_{t-1},o_{t-1},...,i_1,o_1)=P(o_i|i_i)</script><h1 id="观测序列生成过程过程"><a href="#观测序列生成过程过程" class="headerlink" title="观测序列生成过程过程"></a>观测序列生成过程过程</h1><p>根据马尔科夫模型的定义，可以将一个长度为$T$的观测序列$O=(o_1,o_2,…,o_T)$的生成过程描述如下：</p>
 <blockquote>
-<p><strong> 推论</strong>：设$\hat{x}$和$\hat{\alpha}，\hat{\beta}$分别是原始问题和对偶问题的可行解，如果$\hat{d}$ ，那么$\hat{x}$和$\hat{\alpha},\hat{\beta}$分别是原始问题和对偶问题的最优解。</p>
+<p><strong>算法</strong> 观测序列形成<br>输入：隐马尔科夫模型$\lambda=(A,B,\pi)$，观测序列长度T<br>输出：观测序列$O=(o_1,o_2,…,o_T)$。<br>(1) 按照初始状态分布$\pi$产生状态$i_i$<br>(2) 令$t=1$<br>(3) 按照状态$i_t$的观测概率分布$b_{i_{t}}(k)$生成$o_t$<br>(4) 按照状态$i_t$的状态转移概率分布$\{a_{i_t,i_{t+1}}\}$产生状态$i_{t+1}$，$i_{t+1}=1,2,…,N$<br>(5) 令$t=t+1$;如果$t&lt;T$，转步(3);否则，终止</p>
+<h1 id="隐马尔科夫模型的三个基本问题"><a href="#隐马尔科夫模型的三个基本问题" class="headerlink" title="隐马尔科夫模型的三个基本问题"></a>隐马尔科夫模型的三个基本问题</h1><p>隐马尔科夫模型有3个基本问题：<br>(1) 概率计算问题，给定模型$\lambda = (A,B,\pi)$和观测序列$O=(o_1,o_2,…,o_T)$，计算在模型$\lambda$下观测序列$O$出现的概率$P(O|\lambda)$。<br>(2) 学习问题。已知观测序列$O=(o_1,o_2,…,o_T)$,估计模型$\lambda=(A,B,\pi)$参数，使得在该模型下观测序列概率$P(O|\lambda)$最大，即用<strong>极大似然估</strong>计的方法来估计参数。<br>(3)预测问题。也称为解码(decoding)问题。已知模型$\lambda = (A,B,\pi)$和观测序列$O=(o_1,o_2,…,o_T)$，求对给定观测序列条件概率$P(I|O)$最大的状态序列$I=(i_1,i_2,..,i_T)$。即给定观测序列，求最优可能的对应的状态序列</p>
+<h1 id="概率计算算法"><a href="#概率计算算法" class="headerlink" title="概率计算算法"></a>概率计算算法</h1><p>待更新……</p>
+<h1 id="学习算法"><a href="#学习算法" class="headerlink" title="学习算法"></a>学习算法</h1><p>待更新……</p>
+<h1 id="预测算法"><a href="#预测算法" class="headerlink" title="预测算法"></a>预测算法</h1><p>待更新……</p>
 </blockquote>
-<p>所以，当原始问题和对偶问题的最优值相等：$\hat{d}=\hat{p}$ ，可以用求解对偶问题来求解原始问题（当然是对偶问题求解比直接求解原始问题简单的情况下），但是到底满足什么样的条件才能使得$\hat{d}=\hat{p}$，这就是KTT条件的来源</p>
-<h1 id="KTT条件"><a href="#KTT条件" class="headerlink" title="KTT条件"></a>KTT条件</h1><blockquote>
-<p><strong> 定理</strong>：对于原始问题和对偶问题，假设函数$f(x)$和$c_i(x)$是凸函数，$h_i(x)$是仿射函数(即由一阶多项式构成的函数，$f(x) =Ax+b$，A是矩阵，$x，b$是向量)；并且假设不等式约束$c_i(x)$是严格可行的，即存在$x$，对所有的$i$有$c_i(x) &lt; 0$，则存在$\hat{x}$和$\hat{\alpha}，\hat{\beta}$，使得$\hat{x}$ 是原始问题的最优解，$\hat{\alpha}，\hat{\beta}$是对问题的最优解，并且$\hat{d}=\hat{p}=L(\hat{x},\hat{\alpha},\hat{\beta})$</p>
-<p><strong>定理</strong>：对于原始问题和对偶问题，假设函数$f(x)$和$c_i(x)$是凸函数，$h_i(x)$是仿射函数(即由一阶多项式构成的函数，$f(x) =Ax+b$，$A$是矩阵，$x，b$是向量)；并且假设不等式约束$c_i(x)$是严格可行的，即存在$x$，对所有的$i$有$c_i(x) &lt; 0$，则$\hat{x}$和$\hat{\alpha},\hat{\beta}$分别是原始问题和对偶问题的最优解的充分必要条件是$\hat{x}$和$\hat{\alpha}，\hat{\beta}$，满足下面的$Karush-Kuhn-Tucker(KKT)$     条件:</p>
-<script type="math/tex; mode=display">\begin{aligned} &\nabla _x L(\hat{x},\hat{\alpha},\hat{\beta}) =0\newline   &\nabla _{\alpha}L(\hat{x},\hat{\alpha},\hat{\beta}) =0  \newline &\nabla _{\beta} L(\hat{x},\hat{\alpha},\hat{\beta}) =0\newline &\hat{\alpha_i}c_i(\hat{x})=0, i=1,2,...,k(KTT对偶互补条件)\newline &c_i(\hat{x}) \le 0,i=1,2...,k \newline &\hat{\alpha_i} \ge 0,i=1,2,...k \newline &h_j(\hat{x}) =0,j=1,2,...,l) \end{aligned}</script></blockquote>
-<p>关于KKT 条件的理解：前面三个条件是由解析函数的知识，对于各个变量的偏导数为0（这就解释了一开始为什么假设三个函数连续可微，如果不连续可微的话，这里的偏导数存不存在就不能保证），后面四个条件就是原始问题的约束条件以及拉格朗日乘子需要满足的约束。</p>
-<p>特别注意当$\hat{\alpha_i}\ge 0$时，由KKT对偶互补条件可知：$c_i(\hat{x}) =0$，这个知识点会在$ SVM$ 的推导中用到.</p>
 
       
     </div>
@@ -543,7 +526,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/KTT/" rel="tag"> <i class="fa fa-tag"></i> KTT</a>
+            <a href="/tags/markov/" rel="tag"> <i class="fa fa-tag"></i> markov</a>
           
         </div>
       
@@ -571,8 +554,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/12/EM算法/" rel="next" title="EM算法原理的理解">
-                <i class="fa fa-chevron-left"></i> EM算法原理的理解
+              <a href="/2018/07/13/拉格朗日乘数法与对偶问题/" rel="next" title="拉格朗日乘数法与对偶问题">
+                <i class="fa fa-chevron-left"></i> 拉格朗日乘数法与对偶问题
               </a>
             
           </div>
@@ -580,10 +563,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/15/隐马尔科夫模型/" rel="prev" title="隐马尔科夫模型">
-                隐马尔科夫模型 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -750,7 +729,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#约束最优化问题"><span class="nav-number">2.</span> <span class="nav-text">约束最优化问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对偶问题"><span class="nav-number">3.</span> <span class="nav-text">对偶问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原始问题和对偶问题的关系"><span class="nav-number">4.</span> <span class="nav-text">原始问题和对偶问题的关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#KTT条件"><span class="nav-number">5.</span> <span class="nav-text">KTT条件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#观测序列生成过程过程"><span class="nav-number">2.</span> <span class="nav-text">观测序列生成过程过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#隐马尔科夫模型的三个基本问题"><span class="nav-number">3.</span> <span class="nav-text">隐马尔科夫模型的三个基本问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概率计算算法"><span class="nav-number">4.</span> <span class="nav-text">概率计算算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#学习算法"><span class="nav-number">5.</span> <span class="nav-text">学习算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#预测算法"><span class="nav-number">6.</span> <span class="nav-text">预测算法</span></a></li></ol></div>
             
 
           </div>
