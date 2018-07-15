@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="我的技术博客">
 <meta property="og:description" content="引言隐马尔科夫模型是关于时序的概率模型，描述一个隐藏的马尔科夫链随机生成不可观测的状态随机序列，再由各个状态生成一个观测而产生观测随机序列的过程。隐藏的马尔科夫随机生成的状态序列，称为状态序列(state sequence)；每个状态生成一个观测，而由此产生的观测的随机序列(observation sequence).。序列的每一个位置又可以看作一个时刻。隐马尔科夫模型由初始概率分布、状态转移概率">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-15T08:29:51.207Z">
+<meta property="og:updated_time" content="2018-07-15T08:33:26.405Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="隐马尔科夫模型">
 <meta name="twitter:description" content="引言隐马尔科夫模型是关于时序的概率模型，描述一个隐藏的马尔科夫链随机生成不可观测的状态随机序列，再由各个状态生成一个观测而产生观测随机序列的过程。隐藏的马尔科夫随机生成的状态序列，称为状态序列(state sequence)；每个状态生成一个观测，而由此产生的观测的随机序列(observation sequence).。序列的每一个位置又可以看作一个时刻。隐马尔科夫模型由初始概率分布、状态转移概率">
@@ -377,7 +377,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-15T16:29:51+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-15T16:33:26+08:00">
                 2018-07-15
               </time>
             
@@ -489,11 +489,11 @@
 <script type="math/tex; mode=display">P(o_t|i_T,o_T,i_{T-1},o_{T-1},...,i_{t+1},o_{t+1},i_t,i_{t-1},o_{t-1},...,i_1,o_1)=P(o_i|i_i)</script><h1 id="观测序列生成过程过程"><a href="#观测序列生成过程过程" class="headerlink" title="观测序列生成过程过程"></a>观测序列生成过程过程</h1><p>根据马尔科夫模型的定义，可以将一个长度为$T$的观测序列$O=(o_1,o_2,…,o_T)$的生成过程描述如下：</p>
 <blockquote>
 <p><strong>算法</strong> 观测序列形成<br>输入：隐马尔科夫模型$\lambda=(A,B,\pi)$，观测序列长度T<br>输出：观测序列$O=(o_1,o_2,…,o_T)$。<br>(1) 按照初始状态分布$\pi$产生状态$i_i$<br>(2) 令$t=1$<br>(3) 按照状态$i_t$的观测概率分布$b_{i_{t}}(k)$生成$o_t$<br>(4) 按照状态$i_t$的状态转移概率分布$\{a_{i_t,i_{t+1}}\}$产生状态$i_{t+1}$，$i_{t+1}=1,2,…,N$<br>(5) 令$t=t+1$;如果$t&lt;T$，转步(3);否则，终止</p>
+</blockquote>
 <h1 id="隐马尔科夫模型的三个基本问题"><a href="#隐马尔科夫模型的三个基本问题" class="headerlink" title="隐马尔科夫模型的三个基本问题"></a>隐马尔科夫模型的三个基本问题</h1><p>隐马尔科夫模型有3个基本问题：<br>(1) 概率计算问题，给定模型$\lambda = (A,B,\pi)$和观测序列$O=(o_1,o_2,…,o_T)$，计算在模型$\lambda$下观测序列$O$出现的概率$P(O|\lambda)$。<br>(2) 学习问题。已知观测序列$O=(o_1,o_2,…,o_T)$,估计模型$\lambda=(A,B,\pi)$参数，使得在该模型下观测序列概率$P(O|\lambda)$最大，即用<strong>极大似然估</strong>计的方法来估计参数。<br>(3)预测问题。也称为解码(decoding)问题。已知模型$\lambda = (A,B,\pi)$和观测序列$O=(o_1,o_2,…,o_T)$，求对给定观测序列条件概率$P(I|O)$最大的状态序列$I=(i_1,i_2,..,i_T)$。即给定观测序列，求最优可能的对应的状态序列</p>
 <h1 id="概率计算算法"><a href="#概率计算算法" class="headerlink" title="概率计算算法"></a>概率计算算法</h1><p>待更新……</p>
 <h1 id="学习算法"><a href="#学习算法" class="headerlink" title="学习算法"></a>学习算法</h1><p>待更新……</p>
 <h1 id="预测算法"><a href="#预测算法" class="headerlink" title="预测算法"></a>预测算法</h1><p>待更新……</p>
-</blockquote>
 
       
     </div>
