@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="我的技术博客">
 <meta property="og:description" content="引言隐马尔科夫模型是关于时序的概率模型，描述一个隐藏的马尔科夫链随机生成不可观测的状态随机序列，再由各个状态生成一个观测而产生观测随机序列的过程。隐藏的马尔科夫随机生成的状态序列，称为状态序列(state sequence)；每个状态生成一个观测，而由此产生的观测的随机序列(observation sequence).。序列的每一个位置又可以看作一个时刻。隐马尔科夫模型由初始概率分布、状态转移概率">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-28T13:38:05.440Z">
+<meta property="og:updated_time" content="2018-07-28T13:40:00.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="隐马尔科夫模型">
 <meta name="twitter:description" content="引言隐马尔科夫模型是关于时序的概率模型，描述一个隐藏的马尔科夫链随机生成不可观测的状态随机序列，再由各个状态生成一个观测而产生观测随机序列的过程。隐藏的马尔科夫随机生成的状态序列，称为状态序列(state sequence)；每个状态生成一个观测，而由此产生的观测的随机序列(observation sequence).。序列的每一个位置又可以看作一个时刻。隐马尔科夫模型由初始概率分布、状态转移概率">
@@ -377,7 +377,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-28T21:38:05+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-28T21:40:00+08:00">
                 2018-07-28
               </time>
             
@@ -492,7 +492,7 @@
 </blockquote>
 <h1 id="隐马尔科夫模型的三个基本问题"><a href="#隐马尔科夫模型的三个基本问题" class="headerlink" title="隐马尔科夫模型的三个基本问题"></a>隐马尔科夫模型的三个基本问题</h1><p>隐马尔科夫模型有3个基本问题：<br>(1) 概率计算问题，给定模型$\lambda = (A,B,\pi)$和观测序列$O=(o_1,o_2,…,o_T)$，计算在模型$\lambda$下观测序列$O$出现的概率$P(O|\lambda)$。<br>(2) 学习问题。已知观测序列$O=(o_1,o_2,…,o_T)$,估计模型$\lambda=(A,B,\pi)$参数，使得在该模型下观测序列概率$P(O|\lambda)$最大，即用<strong>极大似然估</strong>计的方法来估计参数。<br>(3)预测问题。也称为解码(decoding)问题。已知模型$\lambda = (A,B,\pi)$和观测序列$O=(o_1,o_2,…,o_T)$，求对给定观测序列条件概率$P(I|O)$最大的状态序列$I=(i_1,i_2,..,i_T)$。即给定观测序列，求最优可能的对应的状态序列</p>
 <h1 id="概率计算算法"><a href="#概率计算算法" class="headerlink" title="概率计算算法"></a>概率计算算法</h1><h2 id="直接计算法"><a href="#直接计算法" class="headerlink" title="直接计算法"></a>直接计算法</h2><p>给定模型$\lambda=(A,B,\pi)$和观测序列$O=(o_1,o_2,…,o_T)$，计算观测序列$O$的概率$P(O|\lambda)$，对所有可能的状态序列$I$求和，得到观测序列$O$的概率$P(O|\lambda)$，即</p>
-<script type="math/tex; mode=display">\begin{aligned} P(O|\lambda) &=\sum_I P(O|I,\lambda)P(I\lambda) \newline &= \sum_{i_1,i_2,...,i_T} \pi_{i_{1}}(o_1)a_{i_{1}i_{2}}b_{i_2}o_{2}...a_{i_{T-1}i_{T}} b_{i_{T}}(o_T) \end{aligned}</script><p>但是，利用以上的公式会产生很大的计算量，复杂度达到$O(TN^T)$阶的，使用直接计算法不行<br>那么我们既要采用前向算法或者后向算法</p>
+<script type="math/tex; mode=display">\begin{aligned} P(O|\lambda) &=\sum_I P(O|I,\lambda)P(I\lambda) \newline &= \sum_{i_1,i_2,...,i_T} \pi_{i_{1}}(o_1)a_{i_{1}i_{2}}b_{i_2}(o_{2})...a_{i_{T-1}i_{T}} b_{i_{T}}(o_T) \end{aligned}</script><p>但是，利用以上的公式会产生很大的计算量，复杂度达到$O(TN^T)$阶的，使用直接计算法不行<br>那么我们既要采用前向算法或者后向算法</p>
 <h2 id="前向算法"><a href="#前向算法" class="headerlink" title="前向算法"></a>前向算法</h2><p>待更新</p>
 <h2 id="后向算法"><a href="#后向算法" class="headerlink" title="后向算法"></a>后向算法</h2><p>待更新</p>
 <h1 id="学习算法"><a href="#学习算法" class="headerlink" title="学习算法"></a>学习算法</h1><h2 id="监督学习方法"><a href="#监督学习方法" class="headerlink" title="监督学习方法"></a>监督学习方法</h2><p>假设已给训练数据包含$S$个长度相同的观测序列和对应的状态序列${(O_1,I_1),(O_2,I_2),…,(O_s,I_s)}$，那么可以利用极大似然估计法来估计隐马尔科夫模型的参数，具体的方法如下：<br>1.转移概率$a_{ij}$的估计<br>设样本中时刻$t$处于状态$i$时刻$t+1$转移到状态$j$的频数为$A_{ij}$，那么状态转移概率$a_{ij}$的估计是：</p>
