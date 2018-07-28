@@ -108,13 +108,13 @@
 <meta property="og:site_name" content="我的技术博客">
 <meta property="og:description" content="前言在深度神经网络中，通常使用一种叫修正线性单元(Rectified linear unit，ReLU）作为神经元的激活函数。ReLU起源于神经科学的研究：2001年，Dayan、Abott从生物学角度模拟出了脑神经元接受信号更精确的激活模型，如下图：其中横轴是时间(ms)，纵轴是神经元的放电速率(Firing Rate)。同年，Attwell等神经科学家通过研究大脑的能量消耗过程，推测神经元的工">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/07/28/ReLU激活函数/_image/20161113151632921.png">
-<meta property="og:image" content="http://yoursite.com/2018/07/28/ReLU激活函数/_image/20161113161105403.png">
-<meta property="og:updated_time" content="2018-07-28T12:13:41.781Z">
+<meta property="og:image" content="https://img-blog.csdn.net/20161113151632921">
+<meta property="og:image" content="https://img-blog.csdn.net/20161113161105403">
+<meta property="og:updated_time" content="2018-07-28T13:43:00.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ReLU激活函数">
 <meta name="twitter:description" content="前言在深度神经网络中，通常使用一种叫修正线性单元(Rectified linear unit，ReLU）作为神经元的激活函数。ReLU起源于神经科学的研究：2001年，Dayan、Abott从生物学角度模拟出了脑神经元接受信号更精确的激活模型，如下图：其中横轴是时间(ms)，纵轴是神经元的放电速率(Firing Rate)。同年，Attwell等神经科学家通过研究大脑的能量消耗过程，推测神经元的工">
-<meta name="twitter:image" content="http://yoursite.com/2018/07/28/ReLU激活函数/_image/20161113151632921.png">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20161113151632921">
 
 
 
@@ -380,7 +380,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-28T20:13:41+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-28T21:43:00+08:00">
                 2018-07-28
               </time>
             
@@ -484,9 +484,8 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在深度神经网络中，通常使用一种叫修正线性单元(Rectified linear unit，ReLU）作为神经元的激活函数。ReLU起源于神经科学的研究：2001年，Dayan、Abott从生物学角度模拟出了脑神经元接受信号更精确的激活模型，如下图：<br><img src="./_image/20161113151632921.png" alt=""><br>其中横轴是时间(ms)，纵轴是神经元的放电速率(Firing Rate)。同年，Attwell等神经科学家通过研究大脑的能量消耗过程，推测神经元的工作方式具有稀疏性和分布性；2003年Lennie等神经科学家估测大脑同时被激活的神经元只有1~4%，这进一步表明了神经元的工作稀疏性。</p>
-<h1 id="ReLU激活函数"><a href="#ReLU激活函数" class="headerlink" title="ReLU激活函数"></a>ReLU激活函数</h1><p>首先，我们来看一下ReLU激活函数的形式，如下图：</p>
-<p><img src="./_image/20161113161105403.png" alt=""><br>从上图不难看出，ReLU函数其实是分段线性函数，把所有的负值都变为0，而正值不变，这种操作被成为单侧抑制。可别小看这个简单的操作，正因为有了这单侧抑制，才使得神经网络中的神经元也具有了稀疏激活性。尤其体现在深度神经网络模型(如CNN)中，当模型增加N层之后，理论上ReLU神经元的激活率将降低2的N次方倍。其实还不一定是这样的形状。只要能起到单侧抑制的作用，无论是镜面翻转还是180度翻转，最终神经元的输出也只是相当于加上了一个常数项系数，并不影响模型的训练结果。之所以这样定，或许是为了契合生物学角度，便于我们理解吧。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在深度神经网络中，通常使用一种叫修正线性单元(Rectified linear unit，ReLU）作为神经元的激活函数。ReLU起源于神经科学的研究：2001年，Dayan、Abott从生物学角度模拟出了脑神经元接受信号更精确的激活模型，如下图：<br><img src="https://img-blog.csdn.net/20161113151632921" alt="git_image"><br>其中横轴是时间(ms)，纵轴是神经元的放电速率(Firing Rate)。同年，Attwell等神经科学家通过研究大脑的能量消耗过程，推测神经元的工作方式具有稀疏性和分布性；2003年Lennie等神经科学家估测大脑同时被激活的神经元只有1~4%，这进一步表明了神经元的工作稀疏性。</p>
+<h1 id="ReLU激活函数"><a href="#ReLU激活函数" class="headerlink" title="ReLU激活函数"></a>ReLU激活函数</h1><p>首先，我们来看一下ReLU激活函数的形式，如下图：<br><img src="https://img-blog.csdn.net/20161113161105403" alt="git_image"><br>从上图不难看出，ReLU函数其实是分段线性函数，把所有的负值都变为0，而正值不变，这种操作被成为单侧抑制。可别小看这个简单的操作，正因为有了这单侧抑制，才使得神经网络中的神经元也具有了稀疏激活性。尤其体现在深度神经网络模型(如CNN)中，当模型增加N层之后，理论上ReLU神经元的激活率将降低2的N次方倍。其实还不一定是这样的形状。只要能起到单侧抑制的作用，无论是镜面翻转还是180度翻转，最终神经元的输出也只是相当于加上了一个常数项系数，并不影响模型的训练结果。之所以这样定，或许是为了契合生物学角度，便于我们理解吧。</p>
 <p>那么问题来了：这种稀疏性有何作用？换句话说，我们为什么需要让神经元稀疏？当训练一个深度分类模型的时候，和目标相关的特征往往也就那么几个，因此通过ReLU实现稀疏后的模型能够更好地挖掘相关特征，拟合训练数据。</p>
 <p>此外，相比于其它激活函数来说，<strong>ReLU有以下优势</strong>：对于线性函数而言，ReLU的表达能力更强，尤其体现在深度网络中；而对于非线性函数而言，ReLU由于非负区间的梯度为常数，因此<strong>不存在梯度消失问题(Vanishing Gradient Problem)</strong>，使得模型的收敛速度维持在一个稳定状态。这里稍微描述一下什么是<strong>梯度消失问题</strong>：当梯度小于1时，预测值与真实值之间的误差每传播一层会衰减一次，如果在深层模型中使用sigmoid作为激活函数，这种现象尤为明显，将导致模型收敛停滞不前。</p>
 
