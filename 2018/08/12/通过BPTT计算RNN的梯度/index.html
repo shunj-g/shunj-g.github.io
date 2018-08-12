@@ -111,7 +111,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/ML/RNN_1.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/ML/RNN_2.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/ML/RNN_3.jpg">
-<meta property="og:updated_time" content="2018-08-12T07:45:08.820Z">
+<meta property="og:updated_time" content="2018-08-12T07:49:50.793Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通过BPTT计算RNN的梯度">
 <meta name="twitter:description" content="前言我们知道循环神经网络(RNN)中一些重要的设计模式包括以下几种：   每个时间步都有输出，并且隐藏单元之间有循环连接的循环网络，如图 1 所示。 每个时间步都产生一个输出，只有当前时刻的输出到下个时刻的隐藏单元之间有循环连接的循环网络，如图 2 所示。 隐藏单元之间存在循环连接，但读取整个序列后产生单个输出的循环网络，如图 3 所示。    图 1: 计算循环网络(将x值的输入序列映射到输出值">
@@ -381,7 +381,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-12T15:45:08+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-12T15:49:50+08:00">
                 2018-08-12
               </time>
             
@@ -448,7 +448,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,766
+                  2,298
                 </span>
               
 
@@ -464,7 +464,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  8
                 </span>
               
             </div>
@@ -512,6 +512,7 @@
 <script type="math/tex; mode=display">\nabla_{o^{(t)}}L = V^T \nabla_{o^{(t)}}L</script><p>然后，我们可以从时刻$t = \tau - 1$到$t = 1$反向迭代，通过时间反向传播梯度，注意$h(t)(t &lt; \tau)$ 同时具有$o(t)$和$h(t+1)$两个后续节点。因此，它的梯度由下式计算<br><code>这个式子看起来简单但是求解起来很容易出错，因为其中嵌套着激活函数函数，是复合函数的求道过程。</code></p>
 <script type="math/tex; mode=display">\begin{aligned} \nabla_{h(t)}L &= (\frac{\partial h^{(t+1)}}{\partial h^{(t)}})^T(\nabla_{h(t+1)}L) + (\frac{\partial o^{(t)}}{\partial h^{(t)}})^T(\nabla_{o(t)}L) \newline   &=W^T( \nabla_{h(t+1)}L)diag(1-(h^{(t+1)})^2) + V^T(\nabla_{o(t)}L)\end{aligned}</script><p>其中$diag(1-(h^{(t+1)})^2)$ 表示包含元素  $1-(h_{i}^{(t+1)})^2$的对角矩阵。这是关于时刻$t+1$与隐藏单元i 关联的双曲正切的$Jacobian$。<br>一旦获得了计算图内部节点的梯度，我们就可以得到关于参数节点的梯度。因为参数在许多时间步共享，我们必须在表示这些变量的微积分操作时谨慎对待。我们希望实现的等式使用$bprop$ 方法计算计算图中单一边对梯度的贡献。然而微积分中的$∇_Wf$ 算子，计算$W$ 对于$f$ 的贡献时将计算图中的所有边都考虑进去了。为了消除这种歧义，我们定义只在$t $时刻使用的虚拟变量$W^{(t)}$ 作为W的副本。然后，我们可以使用$∇_{W^{(t)}}$ 表示权重在时间步$t $对梯度的贡献。<br>使用这个表示，关于剩下参数的梯度可以由下式给出：</p>
 <script type="math/tex; mode=display">\begin{aligned} &\nabla_cL = \sum_{t}(\frac{\partial o^{(t)}}{\partial c})^T \nabla_{o^{(t)}}L=  \nabla_{o^{(t)}}L, \newline &\nabla_bL = \sum_{t}(\frac{\partial h^{(t)}}{\partial b^{(t)}})^T \nabla_{h^{(t)}}L=  \sum_{t}diag(1-(h^{(t)})^2)\nabla_{h(t)}L,\newline &\nabla_VL = \sum_{t}\sum_{i}(\frac{\partial L}{\partial o_{i}^{(t)}})^T \nabla_{V}o^{(t)}=  \sum_{t}(\nabla_{o(t)}L)h^{(t)^T}, \newline & \nabla_WL = \sum_{t}\sum_{i}(\frac{\partial L}{\partial h_{i}^{(t)}})^T \nabla_{W^{(t)}}h_{i}^{(t)} =  \sum_{t}diag(1-(h^{(t)})^2)(\nabla_{h(t)}L)h^{(t)^T},\newline & \nabla_UL = \sum_{t}\sum_{i}(\frac{\partial L}{\partial h_{i}^{(t)}})^T \nabla_{U^{(t)}}h_{i}^{(t)} =  \sum_{t}diag(1-(h^{(t)})^2)(\nabla_{h(t)}L )x^{(t)^T}, \end{aligned}</script><p>因为计算图中定义的损失的任何参数都不是训练数据$x^{(t)} $的父节点，所以我们不需要计算关于它的梯度。</p>
+<h1 id="关于梯度消失和梯度爆炸"><a href="#关于梯度消失和梯度爆炸" class="headerlink" title="关于梯度消失和梯度爆炸"></a>关于梯度消失和梯度爆炸</h1><p>在累乘的过程中，如果取sigmoid函数作为激活函数的话，那么必然是一堆小数在做乘法，结果就是越乘越小。随着时间序列的不断深入，小数的累乘就会导致梯度越来越小直到接近于0，这就是“梯度消失“现象。其实RNN的时间序列与深层神经网络很像，在较为深层的神经网络中使用sigmoid函数做激活函数也会导致反向传播时梯度消失，梯度消失就意味消失那一层的参数再也不更新，那么那一层隐层就变成了单纯的映射层，毫无意义了，所以在深层神经网络中，有时候多加神经元数量可能会比多家深度好。<br>RNN的特点本来就是能“追根溯源“利用历史数据，现在告诉我可利用的历史数据竟然是有限的，这就令人非常难受，解决“梯度消失“是非常必要的。解决“梯度消失“的方法主要有：<br>1、选取更好的激活函数<br>2、改变传播结构<br>关于第一点，一般选用ReLU函数作为激活函数，<br>ReLU函数的左侧导数为0，右侧导数恒为1，这就避免了“梯度消失“的发生。但恒为1的导数容易导致“梯度爆炸“，但设定合适的阈值可以解决这个问题。还有一点就是如果左侧横为0的导数有可能导致把神经元学死，不过设置合适的步长（学习旅）也可以有效避免这个问题的发生。<br>sigmoid函数还有一个缺点，Sigmoid函数输出不是零中心对称。sigmoid的输出均大于0，这就使得输出不是0均值，称为偏移现象，这将导致后一层的神经元将上一层输出的非0均值的信号作为输入。关于原点对称的输入和中心对称的输出，网络会收敛地更好。</p>
 
       
     </div>
@@ -751,7 +752,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算RNN的梯度"><span class="nav-number">2.</span> <span class="nav-text">计算RNN的梯度</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算RNN的梯度"><span class="nav-number">2.</span> <span class="nav-text">计算RNN的梯度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于梯度消失和梯度爆炸"><span class="nav-number">3.</span> <span class="nav-text">关于梯度消失和梯度爆炸</span></a></li></ol></div>
             
 
           </div>
@@ -785,7 +786,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">8.0k</span>
+    <span title="Site words total count">8.5k</span>
   
 </div>
 
