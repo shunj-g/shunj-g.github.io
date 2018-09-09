@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="我的技术博客">
 <meta property="og:description" content="k均值聚类算法（经典的）算法步骤如下：  step1: 从数据集中随机选取K个样本作为初始聚类中心$C = {c_1,c_2,…,c_k}$;step2: 针对数据集中的每个样本$x_1$,计算它到$K$个聚类中心的距离，并且将其分到距离最小的聚类中心所对应的类中；step3:针对每个类别$c_i$,从新计算它的聚类中心$c_i = \frac{1} {|c_i|} \sum_{x \in  c_">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-09T08:18:59.059Z">
+<meta property="og:updated_time" content="2018-09-09T08:21:31.564Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="三类聚类算法">
 <meta name="twitter:description" content="k均值聚类算法（经典的）算法步骤如下：  step1: 从数据集中随机选取K个样本作为初始聚类中心$C = {c_1,c_2,…,c_k}$;step2: 针对数据集中的每个样本$x_1$,计算它到$K$个聚类中心的距离，并且将其分到距离最小的聚类中心所对应的类中；step3:针对每个类别$c_i$,从新计算它的聚类中心$c_i = \frac{1} {|c_i|} \sum_{x \in  c_">
@@ -377,7 +377,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-09T16:18:59+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-09T16:21:31+08:00">
                 2018-09-09
               </time>
             
@@ -485,7 +485,7 @@
 <blockquote>
 <p>step1: 从数据集中随机选取K个样本作为初始聚类中心$C = {c_1,c_2,…,c_k}$;<br>step2: 针对数据集中的每个样本$x_1$,计算它到$K$个聚类中心的距离，并且将其分到距离最小的聚类中心所对应的类中；<br>step3:针对每个类别$c_i$,从新计算它的聚类中心$c_i = \frac{1} {|c_i|} \sum_{x \in  c_i} x$ 属于这一类的所有样本的质心<br>step4:重复第二步和第三步直到聚类中心的位置不再变化</p>
 </blockquote>
-<h1 id="K均值-算法"><a href="#K均值-算法" class="headerlink" title="K均值++算法"></a>K均值++算法</h1><p>该算法是由$D.Arthur$等人提出来的K-means++针对经典的K均值算法的第一步做了改进，在2016年Olivier Bachem和Mario Lucic等人将K-means++做了改进，该论文在NIPS2016上</p>
+<h1 id="K均值-算法"><a href="#K均值-算法" class="headerlink" title="K均值++算法"></a>K均值++算法</h1><p>该算法是由$D.Arthur$等人提出来的K-means++针对经典的K均值算法的第一步做了改进，在2016年Olivier Bachem和Mario Lucic等人将K-means++做了改进，该论文在<a href="https://papers.nips.cc/paper/6478-fast-and-provably-good-seedings-for-k-means" target="_blank" rel="noopener">NIPS2016</a>上</p>
 <blockquote>
 <p>step1: 从数据集中随机选取一个样本作为初始的聚类中心$c_1$;<br>step2:首先计算每个样本与当前的已有的聚类中心之间的最短距离(即与最近的一个聚类中心的距离)，用$D(x)$表示；接着计算每个样本被选为下一个聚类中心的概率$\frac{D(x)^2}{\sum_{x \in X} D(x)^2}$,最后，按照轮盘法选择下一个聚类中心；<br>step3：重复第二步的直到选出共$K$个聚类中心；<br>之后的过程与经典的$K-means$算法中的第2步和第4步相同</p>
 <h1 id="ISODATA算法"><a href="#ISODATA算法" class="headerlink" title="ISODATA算法"></a>ISODATA算法</h1><p>该算法较为复杂， K-means和K-means++的聚类中心数K是固定不变的，而ISODATA算法在运行过程中能够根据各个类别的实际情况进行两种操作来调整聚类中心数$K$,<br>ISODATA算法基本上有两个操作：<br>（1）分裂操作，对应的增加中心数；<br>（2） 合并操作，对应发减少聚类中心数。<br>关于ISODATA算法的输入参数的含义：<br> （1）预期的聚类中心数目$K_0$: 用户指定一个运行的中心数目，最终的数目使用其决定的，输出的数目范围是$[K_0/2,2K_0]$.<br> （2）每个类所有的要求的最少的样本数目$N_{min}$:用于判断某个类别所包含的样本分散程度较大时是否可以进行分裂操作的临界值。<br> （3）最大方差$\sigma$：用于衡量某个类别中样本的分散程度，是分裂操作的临界值（与第二个条件需要同时满足）<br> （4）两个类别对应的聚类中心之间所允许的最小距离$d_{min}$：如果两个类别考的特别近，则需要对这两个类别进行合并操作，该值是决定是否分裂的临界值</p>
