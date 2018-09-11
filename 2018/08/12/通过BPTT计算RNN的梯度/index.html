@@ -114,7 +114,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/ML/softmax00.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/ML/softmax01.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/ML/softmax02.png">
-<meta property="og:updated_time" content="2018-09-11T08:43:30.740Z">
+<meta property="og:updated_time" content="2018-09-11T08:51:49.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通过BPTT计算RNN的梯度">
 <meta name="twitter:description" content="前言我们知道循环神经网络(RNN)中一些重要的设计模式包括以下几种：   每个时间步都有输出，并且隐藏单元之间有循环连接的循环网络，如图 1 所示。 每个时间步都产生一个输出，只有当前时刻的输出到下个时刻的隐藏单元之间有循环连接的循环网络，如图 2 所示。 隐藏单元之间存在循环连接，但读取整个序列后产生单个输出的循环网络，如图 3 所示。    图 1: 计算循环网络(将x值的输入序列映射到输出值">
@@ -384,7 +384,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-11T16:43:30+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-11T16:51:49+08:00">
                 2018-09-11
               </time>
             
@@ -524,7 +524,7 @@
 <script type="math/tex; mode=display">S_i =\frac{e^i}{\sum_je^j}</script><p>对于一个神经网络结构如下图(图片来自网络)，其参数计算如下：</p>
 <p><img src="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/ML/softmax00.png" alt="git_image"></p>
 <p>我们可以计算出各个输出函数：</p>
-<script type="math/tex; mode=display">z_4 = w_{41}*o_1+w_{42}*o_2+w_{43}*o_3$$$$z_5 = w_{51}*o_1+w_{52}*o_2+w_{53}*o_3$$$$z_6 = w_{61}*o_1+w{62}*o_2+w_{63}*o_3</script><p>那么我们可以经过softmax函数得到:</p>
+<script type="math/tex; mode=display">z_4 = w_{41}*o_1+w_{42}*o_2+w_{43}*o_3</script><script type="math/tex; mode=display">z_5 = w_{51}*o_1+w_{52}*o_2+w_{53}*o_3</script><script type="math/tex; mode=display">z_6 = w_{61}*o_1+w{62}*o_2+w_{63}*o_3</script><p>那么我们可以经过softmax函数得到:</p>
 <script type="math/tex; mode=display">a_4 = \frac{e^{z_4}}{Z^{z_4}+Z^{z_5}+Z^{z_6}}</script><script type="math/tex; mode=display">a_5 = \frac{e^{z_5}}{Z^{z_4}+Z^{z_5}+Z^{z_6}}</script><script type="math/tex; mode=display">a_6= \frac{e^{z_6}}{Z^{z_4}+Z^{z_5}+Z^{z_6}}</script><p>交叉熵函数形式为：</p>
 <script type="math/tex; mode=display">Loss = -\sum_iy_ilna</script><p>进行求导计算：<br>如果$i = j$，则</p>
 <p><img src="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/ML/softmax01.png" alt="git_image"></p>
