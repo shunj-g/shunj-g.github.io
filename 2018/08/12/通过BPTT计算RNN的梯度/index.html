@@ -112,7 +112,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/ML/RNN_2.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/ML/RNN_3.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/ML/softmax00.png">
-<meta property="og:updated_time" content="2018-09-11T10:45:36.201Z">
+<meta property="og:updated_time" content="2018-09-11T10:47:42.305Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通过BPTT计算RNN的梯度">
 <meta name="twitter:description" content="前言我们知道循环神经网络(RNN)中一些重要的设计模式包括以下几种：   每个时间步都有输出，并且隐藏单元之间有循环连接的循环网络，如图 1 所示。 每个时间步都产生一个输出，只有当前时刻的输出到下个时刻的隐藏单元之间有循环连接的循环网络，如图 2 所示。 隐藏单元之间存在循环连接，但读取整个序列后产生单个输出的循环网络，如图 3 所示。    图 1: 计算循环网络(将x值的输入序列映射到输出值">
@@ -382,7 +382,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-11T18:45:36+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-11T18:47:42+08:00">
                 2018-09-11
               </time>
             
@@ -528,7 +528,7 @@
 <script type="math/tex; mode=display">\begin{aligned}   \frac{\partial a_j}{\partial z_i} &= \frac{\partial}{\partial z_i}(\frac{e^{z_j}}{\sum_k e^{z_k}}) \newline &= \frac{(e^{z_j})^{\prime} \cdot \sum_k e^{z_k} - e^{z_j} \cdot e^{z_j}}{(\sum_k e^{z_k})^2} \newline &=\frac{ e^{z_j} }{\sum_k e^{z_k} } -\frac{ e^{z_j} }{\sum_k e^{z_k} } \cdot  \frac{ e^{z_j} }{\sum_k e^{z_k} } \newline &= a_j(1-a_j)\end{aligned}</script><p>如果$i \ne j$，则</p>
 <script type="math/tex; mode=display">\begin{aligned}   \frac{\partial a_j}{\partial z_i} &= \frac{\partial}{\partial z_i}(\frac{e^{z_j}}{\sum_k e^{z_k}}) \newline &= \frac{ 0 \cdot \sum_k e^{z_k} - e^{z_j} \cdot e^{z_i}}{(\sum_k e^{z_k})^2} \newline &= -\frac{ e^{z_j} }{\sum_k e^{z_k} } \cdot  \frac{ e^{z_i} }{\sum_k e^{z_k} } \newline &= -a_ja_i\end{aligned}</script><h1 id="计算RNN的梯度"><a href="#计算RNN的梯度" class="headerlink" title="计算RNN的梯度"></a>计算RNN的梯度</h1><p>计算循环神经网络的梯度是容易的。由反向传播计算得到的梯度，并结合任何通用的基于梯度的技术就可以训练RNN。<br>为了获得BPTT算法行为的一些直观理解，我们举例说明如何通过BPTT计算上述RNN公式（式(1)）的梯度。计算图的节点包括参数$U,V,W,b$和$c$，以及以$t$ 为索引的节点序列$x(t),h(t),o(t)$和$L(t)$。对于每一个节点$N$，我们需要基于$N$后面的节点的梯度，递归地计算梯度$\nabla_NL$。我们从紧接着最终损失的节点开始递归：</p>
 <script type="math/tex; mode=display">\frac{\partial L}{\partial L^{(t)}} = 1</script><p>在这个导数中，我们假设输出$o(t)$作为$softmax$函数的参数，我们可以从$softmax$函数可以获得关于输出概率的向量$\hat{y}$。我们也假设损失是迄今为止给定了输入后的真实目标$y(t)$的负对数似然。对于所有$i,t$，关于时间步$t$输出的梯度$\nabla_{o(t)}L$如下：</p>
-<script type="math/tex; mode=display">(\nabla_{o^{(t)}}L)_i = \frac{\partial L}{\partial o_{i}^{(t)}}  =\frac{\partial L }{\partial L^{(t)}} \frac{\partial L^{(t)} }{\partial o_{i}^{(t)}}= \hat{y}_{i}^{(t)} - 1_{i,y^{(t)}}</script><p><code>`注：</code>这里将详细的计算推导如下：<br><code>这个只是个人的逻辑推导，精确推导有待时日再来</code></p>
+<script type="math/tex; mode=display">(\nabla_{o^{(t)}}L)_i = \frac{\partial L}{\partial o_{i}^{(t)}}  =\frac{\partial L }{\partial L^{(t)}} \frac{\partial L^{(t)} }{\partial o_{i}^{(t)}}= \hat{y}_{i}^{(t)} - 1_{i,y^{(t)}}</script><p><code>注：</code>这里将详细的计算推导如下：<br><code>这个只是个人的逻辑推导，精确推导有待时日再来</code></p>
 <blockquote>
 <p>$L(t)$ 为给定的$x^{(1)},..,x^{(t)} $后$y(t)$ 的负对数似然:</p>
 <script type="math/tex; mode=display">\begin{aligned} L( x^{(1)},..,x^{(t)},y^{(1)},..,y^{(t)}) &= \sum_tL^{(t)}\newline  &=-\sum_tlog(p(y^{(t)}|x^{(1)},..,x^{(t)}) \end{aligned}</script><p>则$L^{(t)}$对$y^{(t)}$求导可以得到一下的结果：</p>
