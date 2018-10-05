@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="我的技术博客">
 <meta property="og:description" content="引言一个典型的卷积神经网络，如LeNet，开始阶段都是卷积层以及池化层的相互交替使用，之后采用全连接层将卷积层和池化之后的结果的特征全部提取进行概率计算处理。在具体的误差反馈和权重的更新的处理上，不论是全连接层发的更新还是卷积层的更新。使用的都是经典的反馈神经网络算法，这种方法将原本较为复杂的，要考虑长期的链式法则转化为只需要考虑前后节点输入和输出误差的权重的影响，使得神经网络当神经网络深度加深时">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-05T13:41:15.582Z">
+<meta property="og:updated_time" content="2018-10-05T13:46:16.124Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CNN卷积神经网络之LeNet5原理">
 <meta name="twitter:description" content="引言一个典型的卷积神经网络，如LeNet，开始阶段都是卷积层以及池化层的相互交替使用，之后采用全连接层将卷积层和池化之后的结果的特征全部提取进行概率计算处理。在具体的误差反馈和权重的更新的处理上，不论是全连接层发的更新还是卷积层的更新。使用的都是经典的反馈神经网络算法，这种方法将原本较为复杂的，要考虑长期的链式法则转化为只需要考虑前后节点输入和输出误差的权重的影响，使得神经网络当神经网络深度加深时">
@@ -377,7 +377,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-05T21:41:15+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-05T21:46:16+08:00">
                 2018-10-05
               </time>
             
@@ -506,7 +506,7 @@
 <li>卷积层-输入层</li>
 </ul>
 <p>相对于反馈网络，卷积神经网络在整个模型的构成上是分解为若干个小的步骤进行，因此对其进行求导更新计算的是逐层更新，<br>首先设定损失函数，因为采用个的one-hot方法，因此误差计算的误差函数为交叉熵函数：</p>
-<script type="math/tex; mode=display">Loss = -ylog(f'(x)) + \frac{\lambda}{2} ||w||^2</script><h2 id="1-输出层到全连接层的方向求导"><a href="#1-输出层到全连接层的方向求导" class="headerlink" title="1.输出层到全连接层的方向求导"></a>1.输出层到全连接层的方向求导</h2><p>对于输出层来说，损失函数是交叉熵函数，由于one-hot方法是大部分是0，只有一个是1，对其交叉熵进行求解可得到：</p>
+<script type="math/tex; mode=display">Loss = -ylog(f(x)) + \frac{\lambda}{2} ||w||^2</script><h2 id="1-输出层到全连接层的方向求导"><a href="#1-输出层到全连接层的方向求导" class="headerlink" title="1.输出层到全连接层的方向求导"></a>1.输出层到全连接层的方向求导</h2><p>对于输出层来说，损失函数是交叉熵函数，由于one-hot方法是大部分是0，只有一个是1，对其交叉熵进行求解可得到：</p>
 <script type="math/tex; mode=display">\begin{align} Loss(f(x),y) &= -\sum ylog(f(x)) \newline &= -(0 \times log(f(x_1)) +0 \times log(f(x_2))... 0 \times log(f(x_{n-1})) + 1\times log(f(x_n))) \newline &= -log(f(x_n))\end{align}</script><p>使用此种规则可以得到的损失函数为：</p>
 <script type="math/tex; mode=display">Loss = -(y-log(f(x))) + \frac{\lambda}{2} ||w||^2</script><p>其中 $y$是样本值等于1的那个值，$log(f(x))$为模型计算出的交叉熵的那个值，其差值$y-log(f(x))$是误差的额度，因为y在one-hot中始终未1，化简如下：</p>
 <script type="math/tex; mode=display">Loss = -(1-log(f(x))) + \frac{\lambda}{2} ||w||^2</script><p>我们的最终的输出层是$softmax$函数，那么对于结果会采用交叉熵的形式去计算损失函数，最后一层的误差敏感度就是卷积网络模型的输出值与真实值之间的差值。<br>那么根据损失函数对权值的偏导数，可以求得全连接的权重更新的计算公式：</p>
