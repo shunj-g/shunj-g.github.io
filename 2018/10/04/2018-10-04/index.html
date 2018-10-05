@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="我的技术博客">
 <meta property="og:description" content="引言一个典型的卷积神经网络，如LeNet，开始阶段都是卷积层以及池化层的相互交替使用，之后采用全连接层将卷积层和池化之后的结果的特征全部提取进行概率计算处理。在具体的误差反馈和权重的更新的处理上，不论是全连接层发的更新还是卷积层的更新。使用的都是经典的反馈神经网络算法，这种方法将原本较为复杂的，要考虑长期的链式法则转化为只需要考虑前后节点输入和输出误差的权重的影响，使得神经网络当神经网络深度加深时">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-05T12:43:13.460Z">
+<meta property="og:updated_time" content="2018-10-05T12:45:45.562Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CNN卷积神经网络之LeNet5原理">
 <meta name="twitter:description" content="引言一个典型的卷积神经网络，如LeNet，开始阶段都是卷积层以及池化层的相互交替使用，之后采用全连接层将卷积层和池化之后的结果的特征全部提取进行概率计算处理。在具体的误差反馈和权重的更新的处理上，不论是全连接层发的更新还是卷积层的更新。使用的都是经典的反馈神经网络算法，这种方法将原本较为复杂的，要考虑长期的链式法则转化为只需要考虑前后节点输入和输出误差的权重的影响，使得神经网络当神经网络深度加深时">
@@ -377,7 +377,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-05T20:43:13+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-05T20:45:45+08:00">
                 2018-10-05
               </time>
             
@@ -504,15 +504,15 @@
 <p>当$i = j$时，$softmax(f(x))$函数对于$f(x)$求导得到的导数为：</p>
 <script type="math/tex; mode=display">\frac{\partial softmax(f(x))}{\partial f(x)} = f(x) \cdot (1-f(x))</script><p>对于$Loss(f(x))$对$f(x)$求导可以得到的导数如下：</p>
 <script type="math/tex; mode=display">\frac{\partial Loss(f(x)}{\partial f(x)} = \frac{1}{f(x)} \cdot f'(x)</script><p>其中$f(x) = wx + b$<br>但是对于$\frac{1}{m}$是怎么来的有待下次推导</p>
+</blockquote>
+</li>
+</ul>
 <h2 id="2-池化层反馈到卷积层的反向求导"><a href="#2-池化层反馈到卷积层的反向求导" class="headerlink" title="2. 池化层反馈到卷积层的反向求导"></a>2. 池化层反馈到卷积层的反向求导</h2><p>从正向来看，假设$l$层为卷积层，而$l+1$层为池化层<br>此时假设：池化层的敏感度为$\sigma_j^{l+1}$，卷积层的敏感度为$\sigma_j^l$。<br>两者的关系可以近似的表达为：</p>
 <script type="math/tex; mode=display">\sigma_j^l = pool \left(\sigma_j^{l+1} \right) * h \left(a_j^l \right)</script><p>$*$对应的是点对点乘，即时元素对应位置的乘积。<br>如果按照mean-pool方法进行反馈运算，则需要将$l+1$池化层扩展到$l$卷积层的大小 ：矩阵由$2 \times 2$变为$4 \times 4$<br>的大矩阵，然后进行平摊处理得到最右边的结果<br>$\begin{bmatrix}1&amp; 2  \newline 3 &amp;4\end{bmatrix}$==&gt;$\begin{bmatrix}1&amp;1 &amp;2 &amp; 2  \newline 1&amp;1 &amp;2 &amp; 2   \newline 3&amp;3 &amp;4 &amp; 4  \newline3&amp;3 &amp;4 &amp; 4  \end{bmatrix}$==&gt;$\begin{bmatrix}0.25&amp;0.25 &amp;0.75&amp; 0.75  \newline 0.25&amp;0.25 &amp;0.75&amp; 0.75   \newline 0.5&amp;05 &amp;1 &amp;1  \newline0.5&amp;05 &amp;1 &amp;1  \end{bmatrix}$</p>
 <h2 id="3-卷积层反馈到池化层的反向求导"><a href="#3-卷积层反馈到池化层的反向求导" class="headerlink" title="3. 卷积层反馈到池化层的反向求导"></a>3. 卷积层反馈到池化层的反向求导</h2><p>当$l$层为池化层的时候，而$l+1$层为卷积层时<br>假设第$l$层有$n$个通道，即有n张特征图[weight,height,n]，而在$l+1$卷积层中有m个特征值。如果$l$层池化层中每个通道都有其对应的敏感度误差，则计算依据为$l+1$层的卷积层中所有卷积核元素敏感度之和</p>
 <script type="math/tex; mode=display">\sigma_j^l = \sum_j^m \left( \sigma_j^{l+1}\otimes K_{ij}\right)</script><p>其中$\otimes$是矩阵的卷积操作，与向前传播不同的是：求$l$层池化层对$l+1$层的敏感度是全卷积操作。在tensorflow中将padding设置为full。注意的是这里的卷积操作是将卷积核先旋转180度再与padding后的矩阵进行卷积计算。</p>
 <h2 id="4-通过敏感度更新卷积神经网络中的权重"><a href="#4-通过敏感度更新卷积神经网络中的权重" class="headerlink" title="4.通过敏感度更新卷积神经网络中的权重"></a>4.通过敏感度更新卷积神经网络中的权重</h2><p>前面已经计算了在卷积神经网络中所有层中敏感度 ，对于卷积神经网络而言，其中特殊的是卷积层和池化层的权重更新比较难计算，而这些层的计算可以通过权重所连接的前后的敏感度来计算，则：</p>
 <script type="math/tex; mode=display">\frac{\partial Loss}{\partial w_{ij}} = x_i \cdot \sigma_j^{i+1}</script><script type="math/tex; mode=display">\frac{\partial Loss}{\partial b_{ij}} = \sum \left( \sigma_j^{i+1}\right)</script><p>其中$\cdot$表示矩阵的点乘<br>未完待更新。。。。。。</p>
-</blockquote>
-</li>
-</ul>
 
       
     </div>
