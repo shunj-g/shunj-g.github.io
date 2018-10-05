@@ -87,7 +87,7 @@
 
 
 
-  <meta name="keywords" content="ReLU," />
+  <meta name="keywords" content="SOM," />
 
 
 
@@ -100,21 +100,18 @@
 
 
 
-<meta name="description" content="前言在深度神经网络中，通常使用一种叫修正线性单元(Rectified linear unit，ReLU）作为神经元的激活函数。ReLU起源于神经科学的研究：2001年，Dayan、Abott从生物学角度模拟出了脑神经元接受信号更精确的激活模型，如下图：其中横轴是时间(ms)，纵轴是神经元的放电速率(Firing Rate)。同年，Attwell等神经科学家通过研究大脑的能量消耗过程，推测神经元的工">
-<meta name="keywords" content="ReLU">
+<meta name="description" content="自组织映射(self-organizing-map)自组织映射(self-organizing-map)SOM神经网络自组织映射的主要目的是将任意维数的输入信号模式转变为一维或者二维的离散映射。并且以拓扑有序的方式自适应实现这个变换。网格中的每个神经元和输入层的源节点全连接，这个网络表示具有神经元按行和列排列的单一计算层的前馈结构[1,2]。在自组织映射形成过程种有三种主要的过程：  竞争。多每个">
+<meta name="keywords" content="SOM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ReLU激活函数">
-<meta property="og:url" content="http://yoursite.com/2018/07/28/ReLU激活函数/index.html">
+<meta property="og:title" content="自组织映射(self-organizing-map)SOM神经网络">
+<meta property="og:url" content="http://yoursite.com/2018/10/05/2018-10-05/index.html">
 <meta property="og:site_name" content="我的技术博客">
-<meta property="og:description" content="前言在深度神经网络中，通常使用一种叫修正线性单元(Rectified linear unit，ReLU）作为神经元的激活函数。ReLU起源于神经科学的研究：2001年，Dayan、Abott从生物学角度模拟出了脑神经元接受信号更精确的激活模型，如下图：其中横轴是时间(ms)，纵轴是神经元的放电速率(Firing Rate)。同年，Attwell等神经科学家通过研究大脑的能量消耗过程，推测神经元的工">
+<meta property="og:description" content="自组织映射(self-organizing-map)自组织映射(self-organizing-map)SOM神经网络自组织映射的主要目的是将任意维数的输入信号模式转变为一维或者二维的离散映射。并且以拓扑有序的方式自适应实现这个变换。网格中的每个神经元和输入层的源节点全连接，这个网络表示具有神经元按行和列排列的单一计算层的前馈结构[1,2]。在自组织映射形成过程种有三种主要的过程：  竞争。多每个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/ML/001.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/ML/002.png">
-<meta property="og:updated_time" content="2018-08-12T08:02:13.765Z">
+<meta property="og:updated_time" content="2018-10-05T13:22:12.385Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ReLU激活函数">
-<meta name="twitter:description" content="前言在深度神经网络中，通常使用一种叫修正线性单元(Rectified linear unit，ReLU）作为神经元的激活函数。ReLU起源于神经科学的研究：2001年，Dayan、Abott从生物学角度模拟出了脑神经元接受信号更精确的激活模型，如下图：其中横轴是时间(ms)，纵轴是神经元的放电速率(Firing Rate)。同年，Attwell等神经科学家通过研究大脑的能量消耗过程，推测神经元的工">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/ML/001.png">
+<meta name="twitter:title" content="自组织映射(self-organizing-map)SOM神经网络">
+<meta name="twitter:description" content="自组织映射(self-organizing-map)自组织映射(self-organizing-map)SOM神经网络自组织映射的主要目的是将任意维数的输入信号模式转变为一维或者二维的离散映射。并且以拓扑有序的方式自适应实现这个变换。网格中的每个神经元和输入层的源节点全连接，这个网络表示具有神经元按行和列排列的单一计算层的前馈结构[1,2]。在自组织映射形成过程种有三种主要的过程：  竞争。多每个">
 
 
 
@@ -144,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/28/ReLU激活函数/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/05/2018-10-05/"/>
 
 
 
 
 
-  <title>ReLU激活函数 | 我的技术博客</title>
+  <title>自组织映射(self-organizing-map)SOM神经网络 | 我的技术博客</title>
   
 
 
@@ -335,7 +332,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/28/ReLU激活函数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/05/2018-10-05/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="shunj-g">
@@ -352,7 +349,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ReLU激活函数</h1>
+          <h1 class="post-title" itemprop="name headline">自组织映射(self-organizing-map)SOM神经网络</h1>
         
 
         <div class="post-meta">
@@ -364,8 +361,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-28T20:04:26+08:00">
-                2018-07-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-05T20:47:22+08:00">
+                2018-10-05
               </time>
             
 
@@ -380,8 +377,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-12T16:02:13+08:00">
-                2018-08-12
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-05T21:22:12+08:00">
+                2018-10-05
               </time>
             
           </span>
@@ -416,7 +413,7 @@
 
           
           
-             <span id="/2018/07/28/ReLU激活函数/" class="leancloud_visitors" data-flag-title="ReLU激活函数">
+             <span id="/2018/10/05/2018-10-05/" class="leancloud_visitors" data-flag-title="自组织映射(self-organizing-map)SOM神经网络">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -447,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  708
+                  1,224
                 </span>
               
 
@@ -463,7 +460,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  4
                 </span>
               
             </div>
@@ -484,10 +481,20 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在深度神经网络中，通常使用一种叫修正线性单元(Rectified linear unit，ReLU）作为神经元的激活函数。ReLU起源于神经科学的研究：2001年，Dayan、Abott从生物学角度模拟出了脑神经元接受信号更精确的激活模型，如下图：<br><img src="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/ML/001.png" alt="git_image"><br>其中横轴是时间(ms)，纵轴是神经元的放电速率(Firing Rate)。同年，Attwell等神经科学家通过研究大脑的能量消耗过程，推测神经元的工作方式具有稀疏性和分布性；2003年Lennie等神经科学家估测大脑同时被激活的神经元只有1~4%，这进一步表明了神经元的工作稀疏性。</p>
-<h1 id="ReLU激活函数"><a href="#ReLU激活函数" class="headerlink" title="ReLU激活函数"></a>ReLU激活函数</h1><p>首先，我们来看一下ReLU激活函数的形式，如下图：<br><img src="https://raw.githubusercontent.com/shunj-g/shunj-g.github.io/master/images/my_images/ML/002.png" alt="git_image"><br>从上图不难看出，ReLU函数其实是分段线性函数，把所有的负值都变为0，而正值不变，这种操作被成为单侧抑制。可别小看这个简单的操作，正因为有了这单侧抑制，才使得神经网络中的神经元也具有了稀疏激活性。尤其体现在深度神经网络模型(如CNN)中，当模型增加N层之后，理论上ReLU神经元的激活率将降低2的N次方倍。其实还不一定是这样的形状。只要能起到单侧抑制的作用，无论是镜面翻转还是180度翻转，最终神经元的输出也只是相当于加上了一个常数项系数，并不影响模型的训练结果。之所以这样定，或许是为了契合生物学角度，便于我们理解吧。</p>
-<p>那么问题来了：这种稀疏性有何作用？换句话说，我们为什么需要让神经元稀疏？当训练一个深度分类模型的时候，和目标相关的特征往往也就那么几个，因此通过ReLU实现稀疏后的模型能够更好地挖掘相关特征，拟合训练数据。</p>
-<p>此外，相比于其它激活函数来说，<strong>ReLU有以下优势</strong>：对于线性函数而言，ReLU的表达能力更强，尤其体现在深度网络中；而对于非线性函数而言，ReLU由于非负区间的梯度为常数，因此<strong>不存在梯度消失问题(Vanishing Gradient Problem)</strong>，使得模型的收敛速度维持在一个稳定状态。这里稍微描述一下什么是<strong>梯度消失问题</strong>：当梯度小于1时，预测值与真实值之间的误差每传播一层会衰减一次，如果在深层模型中使用sigmoid作为激活函数，这种现象尤为明显，将导致模型收敛停滞不前。</p>
+        <h1 id="自组织映射-self-organizing-map"><a href="#自组织映射-self-organizing-map" class="headerlink" title="自组织映射(self-organizing-map)"></a>自组织映射(self-organizing-map)</h1><p>自组织映射(self-organizing-map)SOM神经网络<br>自组织映射的主要目的是将任意维数的输入信号模式转变为一维或者二维的离散映射。并且以拓扑有序的方式自适应实现这个变换。<br>网格中的每个神经元和输入层的源节点全连接，这个网络表示具有神经元按行和列排列的单一计算层的前馈结构[1,2]。<br>在自组织映射形成过程种有三种主要的过程：</p>
+<ol>
+<li>竞争。多每个输入模式，网络中计算他们各自的判别的函数值，这个判别函数为神经元之间的竞争提供了竞争的基础。判别函数的最大值的神经元为竞争的胜利者。</li>
+<li>合作。获胜的神经元决定兴奋神经元的拓扑领域的空间位置，从而提供这样的相邻神经元合作基础</li>
+<li>突触调节。这个机制使兴奋神经元通过对他们图抽权值的适当调节以增加他们关于该输入模式的判别函数值。所做的调节使获胜的神经元对以后相似输入模式的响应增强了。<h1 id="关于自组织映射的算法"><a href="#关于自组织映射的算法" class="headerlink" title="关于自组织映射的算法"></a>关于自组织映射的算法</h1>相应的核定义如下：<script type="math/tex; mode=display">k(x,w_i,\sigma _{i})=\frac{1}{\Gamma \left( \frac{m}{2} \right)}\Gamma \left( \frac{m}{2},\frac{\left\| x-w_i \right\|^2}{2\sigma _i^2} \right) i=1,2,\cdots ,l</script>注意以$r = ||x - w_i||$为中心的核对于所有的$i$是放射状对称的，不忘全的gamma分布保证了当输入分布是高斯时核的微分最大的。<br>根据上式，我们可以为构造自组织拓扑公式的算法做了准备，在映射中利用核函数来描述每个神经元。<br>通过以下式子的微分熵定义的目标函数对于核参数(<strong>权值向量$w_i$和核宽$\sigma_i$</strong>的梯度公式来开始)<script type="math/tex; mode=display">H(Y_i)=-\int_{-\infty }^{\infty }p_{Y_i}(y_i)\log p_{y_i}(y_i)dy_i</script>目标函数$H(Y_i)$是定义在第$i$个神经输出之上。<script type="math/tex; mode=display">y_i = k(x,w_i,\sigma_i)，i = 1,2,...,l</script>在另一个方面，通过定义在到核的中心的半径距离$r$之上，<script type="math/tex; mode=display">P_R(r)=\begin{cases} \frac{1}{2^{(m/2)-1}}\Gamma (m/2) {(\frac{r}{\sigma })}^{m-1}\exp (-\frac{r^2}{2\sigma^2}) & r \ge 0\newline 0 & r < 0 \end{cases}</script>将随机变量$R$变换到$Y_i$，且得到：<script type="math/tex; mode=display">p_{Y_i}(y_i)=\frac{p_R(r)}{|\frac{dy_i}{dr}|}</script>定义目标函数;<script type="math/tex; mode=display">H(Y_i)=-\int_{0}^{\infty }p_{R(r)}\log p_{R(r)}dr+\int_{0}^{\infty }{p_{R(r)}\log \left| \frac{\partial y_i(r)}{\partial r} \right|}dr</script><h2 id="考虑权值向量-w-i-的梯度"><a href="#考虑权值向量-w-i-的梯度" class="headerlink" title="考虑权值向量$w_i$的梯度"></a>考虑权值向量$w_i$的梯度</h2>对权值向量$w_i$的梯度，上式第一部分独立于$w_i$，第二项是偏导数$log|{\partial y_i(r)}/{\partial r}|$的期望。因此可以将$H(Y_i)$对于$w_i$的导数表达为：<script type="math/tex; mode=display">\frac{\partial H(Y_i)}{\partial w_i} = \frac{\partial E\left[log \left|  \frac{\partial y_i(r)}{\partial r}\right|\right]}{\partial w_i}</script>将右端项的期望用确定的量来替代：<script type="math/tex; mode=display">E \left[log \left| \frac{\partial y_i(r)}{\partial r}   \right|   \right] = log \left|  \frac{\partial \bar{y_i}(r)}{\partial r}\right|</script>选择一个启发式的方式：使用平方欧几里得项$||x-w_i||^2$,则可以通过以下方式来逼近：<script type="math/tex; mode=display">\frac{\partial H(\bar(y)_i}{\partial w_i}\approx \frac{x-w_i}{m\sigma_i^2}，\forall i</script>最大化目标函数，权值跟新与梯度上升相一致。于是可以得到：<script type="math/tex; mode=display">\Delta w_i = \eta_w \left( \frac{\partial H(\bar{y}_i)}{\partial w_i}\right)</script>$ \eta_w$是小的学习率参数。将输入向量x的固定维数m吸收到$\eta$。最后可以表示权值更新为：<script type="math/tex; mode=display">\Delta w_i \approx \eta_w \left( \frac{x-w_i}{\sigma_i^2}\right)</script>因此关于核SOM算法的第一个更新公式为：<script type="math/tex; mode=display">w_i^+ = w_i + \Delta w_i = w_i +\eta_w \left( \frac{x-w_i}{\sigma_i^2}\right)</script>其中$w_i$和$w_i^+$ 分别表示老的和更新后的神经元$i$的权值向量的值。<h2 id="对于核宽-sigma-i-的梯度向量"><a href="#对于核宽-sigma-i-的梯度向量" class="headerlink" title="对于核宽$\sigma_i$的梯度向量"></a>对于核宽$\sigma_i$的梯度向量</h2>关于目标函数$H(\bar{y}_i)$对于核宽$\sigma_i$的梯度向量。同对于权值向量的处理方式对梯度向量$\partial H(\bar{y}_i)/(\partial w_i)$相似的处理方式进行处理，得到：<script type="math/tex; mode=display">\frac{\partial H(\bar{y}_i)}{\partial \sigma_i} = \frac{1}{\sigma_i} \left(  \frac{||x-w_i||^2}{m\sigma_i^2}-1 \right)</script>调整核宽：<script type="math/tex; mode=display">\Delta \sigma_i = \eta_{\sigma}\frac{\partial H(\bar{y}_i)}{\partial sigma_i}= \frac{\eta_{\sigma}}{\sigma_i} \left( \frac{||x-w_i||^2}{m\sigma_i^2}-1 \right)</script>其中$\eta_{\sigma}$为第二个学习率参数。对于核SOM算法的第二个更新公式，我们有：<script type="math/tex; mode=display">\sigma_i^+ = \sigma_i+\Delta \sigma_i = \sigma_i + \frac{\eta_{\sigma}}{\sigma_i} \left( \frac{||x-w_i||^2}{m\sigma_i^2}-1 \right)</script><h1 id="拓扑映射构造"><a href="#拓扑映射构造" class="headerlink" title="拓扑映射构造"></a>拓扑映射构造</h1>考虑到由$l$个神经元组成的网格$A$，这些神经元是由相应的核集(不完全的gamma分布的补)来刻画:<script type="math/tex; mode=display">k(x,w_i,\sigma_i)，i = 1,2,...,l</script>为了构造拓扑映射，我们引入基于活跃程度的在网格$A$的$l$个神经元之间的竞争，获胜的神经元被定义为：<script type="math/tex; mode=display">i(x) = arg \max_i y_i(x)  当 j \in A</script>引入邻域函数$h_{j,i(x)}$，以获胜的神经元$i(x)$为中心，采用距获胜神经元$i(x)$的网格距离的单调减函数，则：<script type="math/tex; mode=display">h_{j,i(x)} = exp \left( -\frac{||x_j-w_i||^2}{2\sigma^2} , j \in A\right)</script>这里的$\sigma$记领域函数$h_{j,i(x)}$d的范围；不要讲领域范围$\sigma$和核宽$\sigma_i$相混淆。<h1 id="SOM算法的总结"><a href="#SOM算法的总结" class="headerlink" title="SOM算法的总结"></a>SOM算法的总结</h1>自组织的映射的步骤如下：<blockquote>
+<ol>
+<li>初试化。对初始权值向量$w_i(0)$和核宽$\sigma_i(0)(i =1,2,…,l)$选择随机值，这里$l$是网格结构中神经元的总的个数。这里仅有的限制是对不同的神经元$w_i(0)$和$\sigma_i(0)$也不同。</li>
+<li>取样。从输入的分布中按一定的概率取出一个样本$x$.</li>
+<li>相似度匹配。在算法的时间步$n$，用下面的准则来确定获胜的神经元$i(x)$:<script type="math/tex; mode=display">i(x) = arg\max_i y_j(x)，j = 1,2,...,l</script></li>
+<li>自适应。调整权值向量和每个核的宽，使用相应的更新公式：<script type="math/tex; mode=display">w_j(n+1) =\begin{cases} w_j(n)+\frac{\eta_w h_{j,i(x)}}{\sigma_j^2}(x(n)-w_j(n)), & j \in A    \newline  w_j(n), & else \end{cases}</script><script type="math/tex; mode=display">\sigma_j(n+1) = \begin{cases} \sigma_j(n) + \frac{\eta_{\sigma} h_{j,i(x)}}{\sigma_j(n)} \left[ \frac{||x(n)-w_j(n)||^2}{m\sigma_j^2(n)}-1\right],&j\in A\newline \sigma_j(n),&else \end{cases}</script>这里$\eta_w$和$\eta_{\sigma}$为学习算法的两个学习率参数，$h_{j,i(x)}$是以获取神经元$i(x)$为中心的领域函数</li>
+</ol>
+</blockquote>
+</li>
+</ol>
 
       
     </div>
@@ -520,7 +527,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ReLU/" rel="tag"> <i class="fa fa-tag"></i> ReLU</a>
+            <a href="/tags/SOM/" rel="tag"> <i class="fa fa-tag"></i> SOM</a>
           
         </div>
       
@@ -548,8 +555,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/15/隐马尔科夫模型/" rel="next" title="隐马尔科夫模型">
-                <i class="fa fa-chevron-left"></i> 隐马尔科夫模型
+              <a href="/2018/10/04/2018-10-04/" rel="next" title="CNN卷积神经网络之LeNet5原理">
+                <i class="fa fa-chevron-left"></i> CNN卷积神经网络之LeNet5原理
               </a>
             
           </div>
@@ -557,10 +564,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/12/通过BPTT计算RNN的梯度/" rel="prev" title="通过BPTT计算RNN的梯度">
-                通过BPTT计算RNN的梯度 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -729,7 +732,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ReLU激活函数"><span class="nav-number">2.</span> <span class="nav-text">ReLU激活函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#自组织映射-self-organizing-map"><span class="nav-number">1.</span> <span class="nav-text">自组织映射(self-organizing-map)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于自组织映射的算法"><span class="nav-number">2.</span> <span class="nav-text">关于自组织映射的算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#考虑权值向量-w-i-的梯度"><span class="nav-number">2.1.</span> <span class="nav-text">考虑权值向量$w_i$的梯度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对于核宽-sigma-i-的梯度向量"><span class="nav-number">2.2.</span> <span class="nav-text">对于核宽$\sigma_i$的梯度向量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拓扑映射构造"><span class="nav-number">3.</span> <span class="nav-text">拓扑映射构造</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SOM算法的总结"><span class="nav-number">4.</span> <span class="nav-text">SOM算法的总结</span></a></li></ol></div>
             
 
           </div>
