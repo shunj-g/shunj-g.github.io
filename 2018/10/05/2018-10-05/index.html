@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="我的技术博客">
 <meta property="og:description" content="自组织映射(self-organizing-map)自组织映射(self-organizing-map)SOM神经网络自组织映射的主要目的是将任意维数的输入信号模式转变为一维或者二维的离散映射。并且以拓扑有序的方式自适应实现这个变换。网格中的每个神经元和输入层的源节点全连接，这个网络表示具有神经元按行和列排列的单一计算层的前馈结构[1,2]。在自组织映射形成过程种有三种主要的过程：  竞争。多每个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-05T13:22:12.385Z">
+<meta property="og:updated_time" content="2018-10-05T13:25:55.720Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自组织映射(self-organizing-map)SOM神经网络">
 <meta name="twitter:description" content="自组织映射(self-organizing-map)自组织映射(self-organizing-map)SOM神经网络自组织映射的主要目的是将任意维数的输入信号模式转变为一维或者二维的离散映射。并且以拓扑有序的方式自适应实现这个变换。网格中的每个神经元和输入层的源节点全连接，这个网络表示具有神经元按行和列排列的单一计算层的前馈结构[1,2]。在自组织映射形成过程种有三种主要的过程：  竞争。多每个">
@@ -377,7 +377,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-05T21:22:12+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-05T21:25:55+08:00">
                 2018-10-05
               </time>
             
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,224
+                  1,234
                 </span>
               
 
@@ -485,16 +485,38 @@
 <ol>
 <li>竞争。多每个输入模式，网络中计算他们各自的判别的函数值，这个判别函数为神经元之间的竞争提供了竞争的基础。判别函数的最大值的神经元为竞争的胜利者。</li>
 <li>合作。获胜的神经元决定兴奋神经元的拓扑领域的空间位置，从而提供这样的相邻神经元合作基础</li>
-<li>突触调节。这个机制使兴奋神经元通过对他们图抽权值的适当调节以增加他们关于该输入模式的判别函数值。所做的调节使获胜的神经元对以后相似输入模式的响应增强了。<h1 id="关于自组织映射的算法"><a href="#关于自组织映射的算法" class="headerlink" title="关于自组织映射的算法"></a>关于自组织映射的算法</h1>相应的核定义如下：<script type="math/tex; mode=display">k(x,w_i,\sigma _{i})=\frac{1}{\Gamma \left( \frac{m}{2} \right)}\Gamma \left( \frac{m}{2},\frac{\left\| x-w_i \right\|^2}{2\sigma _i^2} \right) i=1,2,\cdots ,l</script>注意以$r = ||x - w_i||$为中心的核对于所有的$i$是放射状对称的，不忘全的gamma分布保证了当输入分布是高斯时核的微分最大的。<br>根据上式，我们可以为构造自组织拓扑公式的算法做了准备，在映射中利用核函数来描述每个神经元。<br>通过以下式子的微分熵定义的目标函数对于核参数(<strong>权值向量$w_i$和核宽$\sigma_i$</strong>的梯度公式来开始)<script type="math/tex; mode=display">H(Y_i)=-\int_{-\infty }^{\infty }p_{Y_i}(y_i)\log p_{y_i}(y_i)dy_i</script>目标函数$H(Y_i)$是定义在第$i$个神经输出之上。<script type="math/tex; mode=display">y_i = k(x,w_i,\sigma_i)，i = 1,2,...,l</script>在另一个方面，通过定义在到核的中心的半径距离$r$之上，<script type="math/tex; mode=display">P_R(r)=\begin{cases} \frac{1}{2^{(m/2)-1}}\Gamma (m/2) {(\frac{r}{\sigma })}^{m-1}\exp (-\frac{r^2}{2\sigma^2}) & r \ge 0\newline 0 & r < 0 \end{cases}</script>将随机变量$R$变换到$Y_i$，且得到：<script type="math/tex; mode=display">p_{Y_i}(y_i)=\frac{p_R(r)}{|\frac{dy_i}{dr}|}</script>定义目标函数;<script type="math/tex; mode=display">H(Y_i)=-\int_{0}^{\infty }p_{R(r)}\log p_{R(r)}dr+\int_{0}^{\infty }{p_{R(r)}\log \left| \frac{\partial y_i(r)}{\partial r} \right|}dr</script><h2 id="考虑权值向量-w-i-的梯度"><a href="#考虑权值向量-w-i-的梯度" class="headerlink" title="考虑权值向量$w_i$的梯度"></a>考虑权值向量$w_i$的梯度</h2>对权值向量$w_i$的梯度，上式第一部分独立于$w_i$，第二项是偏导数$log|{\partial y_i(r)}/{\partial r}|$的期望。因此可以将$H(Y_i)$对于$w_i$的导数表达为：<script type="math/tex; mode=display">\frac{\partial H(Y_i)}{\partial w_i} = \frac{\partial E\left[log \left|  \frac{\partial y_i(r)}{\partial r}\right|\right]}{\partial w_i}</script>将右端项的期望用确定的量来替代：<script type="math/tex; mode=display">E \left[log \left| \frac{\partial y_i(r)}{\partial r}   \right|   \right] = log \left|  \frac{\partial \bar{y_i}(r)}{\partial r}\right|</script>选择一个启发式的方式：使用平方欧几里得项$||x-w_i||^2$,则可以通过以下方式来逼近：<script type="math/tex; mode=display">\frac{\partial H(\bar(y)_i}{\partial w_i}\approx \frac{x-w_i}{m\sigma_i^2}，\forall i</script>最大化目标函数，权值跟新与梯度上升相一致。于是可以得到：<script type="math/tex; mode=display">\Delta w_i = \eta_w \left( \frac{\partial H(\bar{y}_i)}{\partial w_i}\right)</script>$ \eta_w$是小的学习率参数。将输入向量x的固定维数m吸收到$\eta$。最后可以表示权值更新为：<script type="math/tex; mode=display">\Delta w_i \approx \eta_w \left( \frac{x-w_i}{\sigma_i^2}\right)</script>因此关于核SOM算法的第一个更新公式为：<script type="math/tex; mode=display">w_i^+ = w_i + \Delta w_i = w_i +\eta_w \left( \frac{x-w_i}{\sigma_i^2}\right)</script>其中$w_i$和$w_i^+$ 分别表示老的和更新后的神经元$i$的权值向量的值。<h2 id="对于核宽-sigma-i-的梯度向量"><a href="#对于核宽-sigma-i-的梯度向量" class="headerlink" title="对于核宽$\sigma_i$的梯度向量"></a>对于核宽$\sigma_i$的梯度向量</h2>关于目标函数$H(\bar{y}_i)$对于核宽$\sigma_i$的梯度向量。同对于权值向量的处理方式对梯度向量$\partial H(\bar{y}_i)/(\partial w_i)$相似的处理方式进行处理，得到：<script type="math/tex; mode=display">\frac{\partial H(\bar{y}_i)}{\partial \sigma_i} = \frac{1}{\sigma_i} \left(  \frac{||x-w_i||^2}{m\sigma_i^2}-1 \right)</script>调整核宽：<script type="math/tex; mode=display">\Delta \sigma_i = \eta_{\sigma}\frac{\partial H(\bar{y}_i)}{\partial sigma_i}= \frac{\eta_{\sigma}}{\sigma_i} \left( \frac{||x-w_i||^2}{m\sigma_i^2}-1 \right)</script>其中$\eta_{\sigma}$为第二个学习率参数。对于核SOM算法的第二个更新公式，我们有：<script type="math/tex; mode=display">\sigma_i^+ = \sigma_i+\Delta \sigma_i = \sigma_i + \frac{\eta_{\sigma}}{\sigma_i} \left( \frac{||x-w_i||^2}{m\sigma_i^2}-1 \right)</script><h1 id="拓扑映射构造"><a href="#拓扑映射构造" class="headerlink" title="拓扑映射构造"></a>拓扑映射构造</h1>考虑到由$l$个神经元组成的网格$A$，这些神经元是由相应的核集(不完全的gamma分布的补)来刻画:<script type="math/tex; mode=display">k(x,w_i,\sigma_i)，i = 1,2,...,l</script>为了构造拓扑映射，我们引入基于活跃程度的在网格$A$的$l$个神经元之间的竞争，获胜的神经元被定义为：<script type="math/tex; mode=display">i(x) = arg \max_i y_i(x)  当 j \in A</script>引入邻域函数$h_{j,i(x)}$，以获胜的神经元$i(x)$为中心，采用距获胜神经元$i(x)$的网格距离的单调减函数，则：<script type="math/tex; mode=display">h_{j,i(x)} = exp \left( -\frac{||x_j-w_i||^2}{2\sigma^2} , j \in A\right)</script>这里的$\sigma$记领域函数$h_{j,i(x)}$d的范围；不要讲领域范围$\sigma$和核宽$\sigma_i$相混淆。<h1 id="SOM算法的总结"><a href="#SOM算法的总结" class="headerlink" title="SOM算法的总结"></a>SOM算法的总结</h1>自组织的映射的步骤如下：<blockquote>
+<li>突触调节。这个机制使兴奋神经元通过对他们图抽权值的适当调节以增加他们关于该输入模式的判别函数值。所做的调节使获胜的神经元对以后相似输入模式的响应增强了。</li>
+</ol>
+<h1 id="关于自组织映射的算法"><a href="#关于自组织映射的算法" class="headerlink" title="关于自组织映射的算法"></a>关于自组织映射的算法</h1><p>相应的核定义如下：</p>
+<script type="math/tex; mode=display">k(x,w_i,\sigma _{i})=\frac{1}{\Gamma \left( \frac{m}{2} \right)}\Gamma \left( \frac{m}{2},\frac{\left\| x-w_i \right\|^2}{2\sigma _i^2} \right) i=1,2,\cdots ,l</script><p>注意以$r = ||x - w_i||$为中心的核对于所有的$i$是放射状对称的，不忘全的gamma分布保证了当输入分布是高斯时核的微分最大的。<br>根据上式，我们可以为构造自组织拓扑公式的算法做了准备，在映射中利用核函数来描述每个神经元。<br>通过以下式子的微分熵定义的目标函数对于核参数(<strong>权值向量$w_i$和核宽$\sigma_i$</strong>的梯度公式来开始)</p>
+<script type="math/tex; mode=display">H(Y_i)=-\int_{-\infty }^{\infty }p_{Y_i}(y_i)\log p_{y_i}(y_i)dy_i</script><p>目标函数$H(Y_i)$是定义在第$i$个神经输出之上。</p>
+<script type="math/tex; mode=display">y_i = k(x,w_i,\sigma_i)，i = 1,2,...,l</script><p>在另一个方面，通过定义在到核的中心的半径距离$r$之上，</p>
+<script type="math/tex; mode=display">P_R(r)=\begin{cases} \frac{1}{2^{(m/2)-1}}\Gamma (m/2) {(\frac{r}{\sigma })}^{m-1}\exp (-\frac{r^2}{2\sigma^2}) & r \ge 0\newline 0 & r < 0 \end{cases}</script><p>将随机变量$R$变换到$Y_i$，且得到：</p>
+<script type="math/tex; mode=display">p_{Y_i}(y_i)=\frac{p_R(r)}{|\frac{dy_i}{dr}|}</script><p>定义目标函数;</p>
+<script type="math/tex; mode=display">H(Y_i)=-\int_{0}^{\infty }p_{R(r)}\log p_{R(r)}dr+\int_{0}^{\infty }{p_{R(r)}\log \left| \frac{\partial y_i(r)}{\partial r} \right|}dr</script><h2 id="考虑权值向量-w-i-的梯度"><a href="#考虑权值向量-w-i-的梯度" class="headerlink" title="考虑权值向量$w_i$的梯度"></a>考虑权值向量$w_i$的梯度</h2><p>对权值向量$w_i$的梯度，上式第一部分独立于$w_i$，第二项是偏导数$log|{\partial y_i(r)}/{\partial r}|$的期望。因此可以将$H(Y_i)$对于$w_i$的导数表达为：</p>
+<script type="math/tex; mode=display">\frac{\partial H(Y_i)}{\partial w_i} = \frac{\partial E\left[log \left|  \frac{\partial y_i(r)}{\partial r}\right|\right]}{\partial w_i}</script><p>将右端项的期望用确定的量来替代：</p>
+<script type="math/tex; mode=display">E \left[log \left| \frac{\partial y_i(r)}{\partial r}   \right|   \right] = log \left|  \frac{\partial \bar{y_i}(r)}{\partial r}\right|</script><p>选择一个启发式的方式：使用平方欧几里得项$||x-w_i||^2$,则可以通过以下方式来逼近：</p>
+<script type="math/tex; mode=display">\frac{\partial H(\bar(y)_i}{\partial w_i}\approx \frac{x-w_i}{m\sigma_i^2}，\forall i</script><p>最大化目标函数，权值跟新与梯度上升相一致。于是可以得到：</p>
+<script type="math/tex; mode=display">\Delta w_i = \eta_w \left( \frac{\partial H(\bar{y}_i)}{\partial w_i}\right)</script><p>$ \eta_w$是小的学习率参数。将输入向量x的固定维数m吸收到$\eta$。最后可以表示权值更新为：</p>
+<script type="math/tex; mode=display">\Delta w_i \approx \eta_w \left( \frac{x-w_i}{\sigma_i^2}\right)</script><p>因此关于核SOM算法的第一个更新公式为：</p>
+<script type="math/tex; mode=display">w_i^+ = w_i + \Delta w_i = w_i +\eta_w \left( \frac{x-w_i}{\sigma_i^2}\right)</script><p>其中$w_i$和$w_i^+$ 分别表示老的和更新后的神经元$i$的权值向量的值。</p>
+<h2 id="对于核宽-sigma-i-的梯度向量"><a href="#对于核宽-sigma-i-的梯度向量" class="headerlink" title="对于核宽$\sigma_i$的梯度向量"></a>对于核宽$\sigma_i$的梯度向量</h2><p>关于目标函数$H(\bar{y}_i)$对于核宽$\sigma_i$的梯度向量。同对于权值向量的处理方式对梯度向量$\partial H(\bar{y}_i)/(\partial w_i)$相似的处理方式进行处理，得到：</p>
+<script type="math/tex; mode=display">\frac{\partial H(\bar{y}_i)}{\partial \sigma_i} = \frac{1}{\sigma_i} \left(  \frac{||x-w_i||^2}{m\sigma_i^2}-1 \right)</script><p>调整核宽：</p>
+<script type="math/tex; mode=display">\Delta \sigma_i = \eta_{\sigma}\frac{\partial H(\bar{y}_i)}{\partial sigma_i}= \frac{\eta_{\sigma}}{\sigma_i} \left( \frac{||x-w_i||^2}{m\sigma_i^2}-1 \right)</script><p>其中$\eta_{\sigma}$为第二个学习率参数。对于核SOM算法的第二个更新公式，我们有：</p>
+<script type="math/tex; mode=display">\sigma_i^+ = \sigma_i+\Delta \sigma_i = \sigma_i + \frac{\eta_{\sigma}}{\sigma_i} \left( \frac{||x-w_i||^2}{m\sigma_i^2}-1 \right)</script><h1 id="拓扑映射构造"><a href="#拓扑映射构造" class="headerlink" title="拓扑映射构造"></a>拓扑映射构造</h1><p>考虑到由$l$个神经元组成的网格$A$，这些神经元是由相应的核集(不完全的gamma分布的补)来刻画:</p>
+<script type="math/tex; mode=display">k(x,w_i,\sigma_i)，i = 1,2,...,l</script><p>为了构造拓扑映射，我们引入基于活跃程度的在网格$A$的$l$个神经元之间的竞争，获胜的神经元被定义为：</p>
+<script type="math/tex; mode=display">i(x) = arg \max_i y_i(x)  当 j \in A</script><p>引入邻域函数$h_{j,i(x)}$，以获胜的神经元$i(x)$为中心，采用距获胜神经元$i(x)$的网格距离的单调减函数，则：</p>
+<script type="math/tex; mode=display">h_{j,i(x)} = exp \left( -\frac{||x_j-w_i||^2}{2\sigma^2} , j \in A\right)</script><p>这里的$\sigma$记领域函数$h_{j,i(x)}$d的范围；不要讲领域范围$\sigma$和核宽$\sigma_i$相混淆。</p>
+<h1 id="SOM算法的总结"><a href="#SOM算法的总结" class="headerlink" title="SOM算法的总结"></a>SOM算法的总结</h1><p>自组织的映射的步骤如下：</p>
+<blockquote>
 <ol>
 <li>初试化。对初始权值向量$w_i(0)$和核宽$\sigma_i(0)(i =1,2,…,l)$选择随机值，这里$l$是网格结构中神经元的总的个数。这里仅有的限制是对不同的神经元$w_i(0)$和$\sigma_i(0)$也不同。</li>
 <li>取样。从输入的分布中按一定的概率取出一个样本$x$.</li>
-<li>相似度匹配。在算法的时间步$n$，用下面的准则来确定获胜的神经元$i(x)$:<script type="math/tex; mode=display">i(x) = arg\max_i y_j(x)，j = 1,2,...,l</script></li>
+<li>相似度匹配。在算法的时间步$n$，用下面的准则来确定获胜的神经元$i(x)$:<pre><code> $$i(x) = arg\max_i y_j(x)，j = 1,2,...,l$$
+</code></pre></li>
 <li>自适应。调整权值向量和每个核的宽，使用相应的更新公式：<script type="math/tex; mode=display">w_j(n+1) =\begin{cases} w_j(n)+\frac{\eta_w h_{j,i(x)}}{\sigma_j^2}(x(n)-w_j(n)), & j \in A    \newline  w_j(n), & else \end{cases}</script><script type="math/tex; mode=display">\sigma_j(n+1) = \begin{cases} \sigma_j(n) + \frac{\eta_{\sigma} h_{j,i(x)}}{\sigma_j(n)} \left[ \frac{||x(n)-w_j(n)||^2}{m\sigma_j^2(n)}-1\right],&j\in A\newline \sigma_j(n),&else \end{cases}</script>这里$\eta_w$和$\eta_{\sigma}$为学习算法的两个学习率参数，$h_{j,i(x)}$是以获取神经元$i(x)$为中心的领域函数</li>
 </ol>
 </blockquote>
-</li>
-</ol>
 
       
     </div>
