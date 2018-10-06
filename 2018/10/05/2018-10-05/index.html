@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="我的技术博客">
 <meta property="og:description" content="自组织映射(self-organizing-map)自组织映射(self-organizing-map)SOM神经网络自组织映射的主要目的是将任意维数的输入信号模式转变为一维或者二维的离散映射。并且以拓扑有序的方式自适应实现这个变换。网格中的每个神经元和输入层的源节点全连接，这个网络表示具有神经元按行和列排列的单一计算层的前馈结构[1,2]。在自组织映射形成过程种有三种主要的过程：  竞争。多每个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-06T10:50:40.067Z">
+<meta property="og:updated_time" content="2018-10-06T10:53:51.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自组织映射(self-organizing-map)SOM神经网络">
 <meta name="twitter:description" content="自组织映射(self-organizing-map)自组织映射(self-organizing-map)SOM神经网络自组织映射的主要目的是将任意维数的输入信号模式转变为一维或者二维的离散映射。并且以拓扑有序的方式自适应实现这个变换。网格中的每个神经元和输入层的源节点全连接，这个网络表示具有神经元按行和列排列的单一计算层的前馈结构[1,2]。在自组织映射形成过程种有三种主要的过程：  竞争。多每个">
@@ -377,7 +377,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-06T18:50:40+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-06T18:53:51+08:00">
                 2018-10-06
               </time>
             
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,234
+                  1,224
                 </span>
               
 
@@ -512,8 +512,7 @@
 <ol>
 <li>初试化。对初始权值向量$w_i(0)$和核宽$\sigma_i(0)(i =1,2,…,l)$选择随机值，这里$l$是网格结构中神经元的总的个数。这里仅有的限制是对不同的神经元$w_i(0)$和$\sigma_i(0)$也不同。</li>
 <li>取样。从输入的分布中按一定的概率取出一个样本$x$.</li>
-<li>相似度匹配。在算法的时间步$n$，用下面的准则来确定获胜的神经元$i(x)$:<pre><code> $$i(x) = arg \max_i y_j(x)，j = 1,2,...,l$$
-</code></pre></li>
+<li>相似度匹配。在算法的时间步$n$，用下面的准则来确定获胜的神经元$i(x)$:<script type="math/tex; mode=display">i(x) = arg \max_i y_j(x)，j = 1,2,...,l</script></li>
 <li>自适应。调整权值向量和每个核的宽，使用相应的更新公式：<script type="math/tex; mode=display">w_j(n+1) =\begin{cases} w_j(n)+\frac{\eta_w h_{j,i(x)}}{\sigma_j^2}(x(n)-w_j(n)), & j \in A    \newline  w_j(n), & else \end{cases}</script><script type="math/tex; mode=display">\sigma_j(n+1) = \begin{cases} \sigma_j(n) + \frac{\eta_{\sigma} h_{j,i(x)}}{\sigma_j(n)} \left[ \frac{||x(n)-w_j(n)||^2}{m\sigma_j^2(n)}-1\right],&j\in A\newline \sigma_j(n),&else \end{cases}</script>这里$\eta_w$和$\eta_{\sigma}$为学习算法的两个学习率参数，$h_{j,i(x)}$是以获取神经元$i(x)$为中心的领域函数</li>
 </ol>
 </blockquote>
