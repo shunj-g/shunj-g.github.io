@@ -100,18 +100,18 @@
 
 
 
-<meta name="description" content="引言卷积神经网络时从信号处理衍生而来的一种对数字信号的处理的方式，发展到图像信号处理上演变为一种专门用来处理具有矩阵特征的网格结构处理方式。CNN在很多的应用上的有独特的优势，例如音频处理和图像处理。在数字图像处理中有一种基本的处理方法名为：线性滤波。其中的滤波的工具就是一个小型的矩阵，即卷积核。卷积核的大小远远小于图像矩阵本身。 卷积运算卷积实际上两个矩阵进行一种数学运算。 s(t) = \in">
+<meta name="description" content="#引言卷积神经网络时从信号处理衍生而来的一种对数字信号的处理的方式，发展到图像信号处理上演变为一种专门用来处理具有矩阵特征的网格结构处理方式。CNN在很多的应用上的有独特的优势，例如音频处理和图像处理。在数字图像处理中有一种基本的处理方法名为：线性滤波。其中的滤波的工具就是一个小型的矩阵，即卷积核。卷积核的大小远远小于图像矩阵本身。 #卷积运算卷积实际上两个矩阵进行一种数学运算。$$s(t) =">
 <meta name="keywords" content="CNN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CNN卷积神经网络之TensorFlow的接口">
 <meta property="og:url" content="http://yoursite.com/2018/10/03/2018-10-03/index.html">
 <meta property="og:site_name" content="我的技术博客">
-<meta property="og:description" content="引言卷积神经网络时从信号处理衍生而来的一种对数字信号的处理的方式，发展到图像信号处理上演变为一种专门用来处理具有矩阵特征的网格结构处理方式。CNN在很多的应用上的有独特的优势，例如音频处理和图像处理。在数字图像处理中有一种基本的处理方法名为：线性滤波。其中的滤波的工具就是一个小型的矩阵，即卷积核。卷积核的大小远远小于图像矩阵本身。 卷积运算卷积实际上两个矩阵进行一种数学运算。 s(t) = \in">
+<meta property="og:description" content="#引言卷积神经网络时从信号处理衍生而来的一种对数字信号的处理的方式，发展到图像信号处理上演变为一种专门用来处理具有矩阵特征的网格结构处理方式。CNN在很多的应用上的有独特的优势，例如音频处理和图像处理。在数字图像处理中有一种基本的处理方法名为：线性滤波。其中的滤波的工具就是一个小型的矩阵，即卷积核。卷积核的大小远远小于图像矩阵本身。 #卷积运算卷积实际上两个矩阵进行一种数学运算。$$s(t) =">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-10-04T03:10:07.507Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CNN卷积神经网络之TensorFlow的接口">
-<meta name="twitter:description" content="引言卷积神经网络时从信号处理衍生而来的一种对数字信号的处理的方式，发展到图像信号处理上演变为一种专门用来处理具有矩阵特征的网格结构处理方式。CNN在很多的应用上的有独特的优势，例如音频处理和图像处理。在数字图像处理中有一种基本的处理方法名为：线性滤波。其中的滤波的工具就是一个小型的矩阵，即卷积核。卷积核的大小远远小于图像矩阵本身。 卷积运算卷积实际上两个矩阵进行一种数学运算。 s(t) = \in">
+<meta name="twitter:description" content="#引言卷积神经网络时从信号处理衍生而来的一种对数字信号的处理的方式，发展到图像信号处理上演变为一种专门用来处理具有矩阵特征的网格结构处理方式。CNN在很多的应用上的有独特的优势，例如音频处理和图像处理。在数字图像处理中有一种基本的处理方法名为：线性滤波。其中的滤波的工具就是一个小型的矩阵，即卷积核。卷积核的大小远远小于图像矩阵本身。 #卷积运算卷积实际上两个矩阵进行一种数学运算。$$s(t) =">
 
 
 
@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,354
+                  1,369
                 </span>
               
 
@@ -481,13 +481,14 @@
       
 
       
-        <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>卷积神经网络时从信号处理衍生而来的一种对数字信号的处理的方式，发展到图像信号处理上演变为一种专门用来处理具有矩阵特征的网格结构处理方式。CNN在很多的应用上的有独特的优势，例如音频处理和图像处理。在数字图像处理中有一种基本的处理方法名为：线性滤波。其中的滤波的工具就是一个小型的矩阵，即卷积核。卷积核的大小远远小于图像矩阵本身。</p>
-<h1 id="卷积运算"><a href="#卷积运算" class="headerlink" title="卷积运算"></a>卷积运算</h1><p>卷积实际上两个矩阵进行一种数学运算。</p>
-<script type="math/tex; mode=display">s(t) = \int x(a) \omega(t-a)da</script><p>该式子是卷积运算，另外的表示方式：</p>
-<script type="math/tex; mode=display">s(t) = (x \cdot \omega)(t)</script><p>在公式中，第一个参数的$x$被称为”输入数据“，第二个参数的$\omega$被称为”核函数“，$s(t)$是输出，即特征映射。<br>数字图像的卷积主要有两种思维：1. 稀疏矩阵，2. 参数共享<br>首先对于稀疏矩阵而言，卷积网络具有稀疏性，即卷积核的大小远远输入矩阵的大小。这样就能够计算出更小的参数特征，极大的减少后续的计算量<br>其次，参数共享是指在特征提取过程中，一个模型在多个参数之中使用相同的参数，在传统的神经网络中，每个权重只对应其连接的输入输出起作用，其连接的输入输出的袁术结束后就不会再用到。卷积神经网络中核的每一个元素都被作用输入的每个位置上，在过程中只需要学习一个参数集合就能够用将这些参数用到所有的图片元素中。</p>
-<h1 id="TensorFlow中卷积函数"><a href="#TensorFlow中卷积函数" class="headerlink" title="TensorFlow中卷积函数"></a>TensorFlow中卷积函数</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">tf.nn.conv2d(input,filter,strides,padding,use_cudnn_on_gpu = <span class="keyword">None</span>,name=<span class="keyword">None</span>)</span><br></pre></td></tr></table></figure>
-<p>这里的核心参数有5个：<br>&gt;<br> <strong><em>input</em></strong>: 需要做卷积的图像,Tensor结构，具有[batch,in_height,in_width,in_channels]这样的shape,具体的含义是[训练一个batch的图片数量，图片高度，图片宽度，图片通道数]，该tensor是四维的，数据的类型是32和64的float类型。<br><strong><em>filter</em></strong>:相当于CNN的卷积核，他的要求是一个Tensor,具有[filter_height,filter_width,in_channels,out_channels]这样的shape，具体的含义是：[卷积核高度，卷积核宽度，图像通道数，卷积核个数]，要求的类型与参数的input相同，<code>注：第三维in_channels，就是参数input的第四维</code><br><strong><em>strides</em></strong>:卷积时，图像的每一维的步长，这个是一个一维的向量，第一位和第四维一般默认为为1，第三维和第四维分别是平行和垂直的滑行的步长<br><strong><em>padding</em></strong>:string类型的量，只能是“SAME”和“VALID”这个决定了不同的卷积方式。当生成的卷积结果和原输入的矩阵的大小一致时，使用“VALID”,当使用“SAME”时，表示图像的边缘由一圈0补齐，使得卷积后的图像大小和输入的大小一致。<br><strong><em>use_cudnn_on_gpu</em></strong>：bool类型，是否使用cudnn加速，默认为true</p>
-<h1 id="池化运算-对不同的位置特征进行聚合统计"><a href="#池化运算-对不同的位置特征进行聚合统计" class="headerlink" title="池化运算-对不同的位置特征进行聚合统计"></a>池化运算-对不同的位置特征进行聚合统计</h1><p>通过卷积得到特征后(features)之后，下一步就应该做分类了；然而，数据量太大（一张28<em>28的图像，得到了400个4</em>4输入上的特征，每一个特征和图像卷积都会得到一个(28-4+1)<em>(28-4+1) =625维的特征向量 ，由于有400个特征向量，每个样例（sample）都会得到一个625</em>400 = 250000维的特征向量，这个虽然不够大，，但是，当图像的维数增大时，则计算复杂度增大，例如当维数为96*96时，则计算的数据量为300多万。这个对于一个分类器的压力是很大的，这样就会容易出现过拟合(over-fitting)的现象）<br>这个问题的产生主要是卷积后的图像具有一种”静态性“的属性，也就是说，一个区域有用的特征在另外的特征极有可能在另外的区域也能够适用。因此就有必要对不同的位置的特征进行聚合统计，即平均池化，最大池化<br>池化相同的或者重复的隐藏单元的产生的特征，那么池化单元具有平移不变性（translation invariant）,这个意味图像经管平移一个区域之后，仍然能产生很多相同的（池化）特征。在(物体检测和语音识别中）希望得到更多的平移不变性的特征<br>Tensorflow中池化运算的函数如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">tf.nn.max_pool(value,ksize,strides,pading,name=<span class="keyword">None</span>)</span><br></pre></td></tr></table></figure></p>
+        <p>#引言<br>卷积神经网络时从信号处理衍生而来的一种对数字信号的处理的方式，发展到图像信号处理上演变为一种专门用来处理具有矩阵特征的网格结构处理方式。CNN在很多的应用上的有独特的优势，例如音频处理和图像处理。在数字图像处理中有一种基本的处理方法名为：线性滤波。其中的滤波的工具就是一个小型的矩阵，即卷积核。卷积核的大小远远小于图像矩阵本身。</p>
+<p>#卷积运算<br>卷积实际上两个矩阵进行一种数学运算。<br>$$s(t) = \int x(a) \omega(t-a)da$$<br>该式子是卷积运算，另外的表示方式：<br>$$s(t) = (x \cdot \omega)(t)$$<br>在公式中，第一个参数的$x$被称为”输入数据“，第二个参数的$\omega$被称为”核函数“，$s(t)$是输出，即特征映射。<br>数字图像的卷积主要有两种思维：1. 稀疏矩阵，2. 参数共享<br>首先对于稀疏矩阵而言，卷积网络具有稀疏性，即卷积核的大小远远输入矩阵的大小。这样就能够计算出更小的参数特征，极大的减少后续的计算量<br>其次，参数共享是指在特征提取过程中，一个模型在多个参数之中使用相同的参数，在传统的神经网络中，每个权重只对应其连接的输入输出起作用，其连接的输入输出的袁术结束后就不会再用到。卷积神经网络中核的每一个元素都被作用输入的每个位置上，在过程中只需要学习一个参数集合就能够用将这些参数用到所有的图片元素中。</p>
+<p>#TensorFlow中卷积函数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">tf.nn.conv2d(input,filter,strides,padding,use_cudnn_on_gpu = <span class="keyword">None</span>,name=<span class="keyword">None</span>)</span><br></pre></td></tr></table></figure></p>
+<p>这里的核心参数有5个：</p>
+<blockquote>
+</blockquote>
+<p> <strong><em>input</em></strong>: 需要做卷积的图像,Tensor结构，具有[batch,in_height,in_width,in_channels]这样的shape,具体的含义是[训练一个batch的图片数量，图片高度，图片宽度，图片通道数]，该tensor是四维的，数据的类型是32和64的float类型。<br><strong><em>filter</em></strong>:相当于CNN的卷积核，他的要求是一个Tensor,具有[filter_height,filter_width,in_channels,out_channels]这样的shape，具体的含义是：[卷积核高度，卷积核宽度，图像通道数，卷积核个数]，要求的类型与参数的input相同，<code>注：第三维in_channels，就是参数input的第四维</code><br><strong><em>strides</em></strong>:卷积时，图像的每一维的步长，这个是一个一维的向量，第一位和第四维一般默认为为1，第三维和第四维分别是平行和垂直的滑行的步长<br><strong><em>padding</em></strong>:string类型的量，只能是“SAME”和“VALID”这个决定了不同的卷积方式。当生成的卷积结果和原输入的矩阵的大小一致时，使用“VALID”,当使用“SAME”时，表示图像的边缘由一圈0补齐，使得卷积后的图像大小和输入的大小一致。<br><strong><em>use_cudnn_on_gpu</em></strong>：bool类型，是否使用cudnn加速，默认为true</p>
+<p>#池化运算-对不同的位置特征进行聚合统计<br>通过卷积得到特征后(features)之后，下一步就应该做分类了；然而，数据量太大（一张28<em>28的图像，得到了400个4</em>4输入上的特征，每一个特征和图像卷积都会得到一个(28-4+1)<em>(28-4+1) =625维的特征向量 ，由于有400个特征向量，每个样例（sample）都会得到一个625</em>400 = 250000维的特征向量，这个虽然不够大，，但是，当图像的维数增大时，则计算复杂度增大，例如当维数为96*96时，则计算的数据量为300多万。这个对于一个分类器的压力是很大的，这样就会容易出现过拟合(over-fitting)的现象）<br>这个问题的产生主要是卷积后的图像具有一种”静态性“的属性，也就是说，一个区域有用的特征在另外的特征极有可能在另外的区域也能够适用。因此就有必要对不同的位置的特征进行聚合统计，即平均池化，最大池化<br>池化相同的或者重复的隐藏单元的产生的特征，那么池化单元具有平移不变性（translation invariant）,这个意味图像经管平移一个区域之后，仍然能产生很多相同的（池化）特征。在(物体检测和语音识别中）希望得到更多的平移不变性的特征<br>Tensorflow中池化运算的函数如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">tf.nn.max_pool(value,ksize,strides,pading,name=<span class="keyword">None</span>)</span><br></pre></td></tr></table></figure></p>
 <p>参数有四个，和卷积很类似</p>
 <blockquote>
 <p><strong><em>value</em></strong>： 需要池化的输入，一般池化层在卷积层之后，所以输入的是feature_map，依然是[batch,height,width,channels]这样的shape<br><strong><em>ksize</em></strong>: 池化窗口的大小，取一个思维的向量，一般是[1,height,width,1]，一般不再batch和channels上做池化，所以这两个维度设为1.<br><strong><em>strides</em></strong>: 和卷积很类似，窗口的每一个维度上滑动的步长，一般是[1,stride,stride,1]<br><strong><em>padding</em></strong>:和卷积和类似，可以取“VALID”或者是“SAME”,返回的是一个Tensor，类型不变，shape仍然是[batch,height,width,channels]</p>
@@ -616,17 +617,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -724,22 +716,6 @@
       </section>
 
       
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#卷积运算"><span class="nav-number">2.</span> <span class="nav-text">卷积运算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow中卷积函数"><span class="nav-number">3.</span> <span class="nav-text">TensorFlow中卷积函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#池化运算-对不同的位置特征进行聚合统计"><span class="nav-number">4.</span> <span class="nav-text">池化运算-对不同的位置特征进行聚合统计</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
 
       
 
@@ -767,7 +743,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">14.4k</span>
+    <span title="Site words total count">16.8k</span>
   
 </div>
 
