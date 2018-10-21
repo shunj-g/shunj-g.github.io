@@ -444,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,347
+                  1,331
                 </span>
               
 
@@ -503,11 +503,13 @@
 </blockquote>
 <p>step5的合并操作：</p>
 <blockquote>
-<p>step1:计算当前所有的类别聚类中心凉凉之间的距离，用矩阵$D$表示，其中$D(i,i) = 0$;<br>step2:对于$D(i,j) \le d_{min}(i \ne j)$的两个类别需要进行合并操作，变成一个新的类，该类中心位置为：<br>$$m_{new} = \frac{1}{n_i + n_j}(n_im_i + n_jm_j)$$<br>上式中的$n_i$和$n_j$表示这两个类别中的样本个数，新的聚类中心可以看作是对两个类别进行加权求和。如果其中一个类所把汗的样本个数较多，缩合成的新类就会更加偏向它。</p>
+<p>step1:计算当前所有的类别聚类中心凉凉之间的距离，用矩阵$D$表示，其中$D(i,i) = 0$;<br>step2:对于$D(i,j) \le d_{min}(i \ne j)$的两个类别需要进行合并操作，变成一个新的类，该类中心位置为：</p>
+<script type="math/tex; mode=display">m_{new} = \frac{1}{n_i + n_j}(n_im_i + n_jm_j)</script><p>上式中的$n_i$和$n_j$表示这两个类别中的样本个数，新的聚类中心可以看作是对两个类别进行加权求和。如果其中一个类所把汗的样本个数较多，缩合成的新类就会更加偏向它。</p>
 </blockquote>
 <p>step6的分裂操作：</p>
 <blockquote>
-<p>step1:计算每个类别下的所有样本在每个维度下的方差；<br>step2:针对每个类别所有方差挑选出最大的方差$\sigma_{max}$;<br>step3:如果某个类别的$\sigma_{max} \ge Sigma$并且该类别包含的样本数量$n_i \geq 2n_{min}$,则可以进行分裂操作，前往步骤4，如果不满足上述条件则退分裂操作。<br>step4: 将满足步骤3中的条件的类分为两个子类别并令$K = K +1$,<br>$$m_i^{(+)} = m_i+\sigma_{max} ,m_i^{(-)} = m_i-\sigma_{max}$$<br>该算法能够在聚类过程中根据各个类所包含样本的实际情况动态调整聚类中心的数目。如果某个类中样本分散程度较大（通过方差进行衡量）并且样本数量较大，则对其进行分裂操作；如果某两个类别靠得比较近（通过聚类中心的距离衡量），则对它们进行合并操作。</p>
+<p>step1:计算每个类别下的所有样本在每个维度下的方差；<br>step2:针对每个类别所有方差挑选出最大的方差$\sigma_{max}$;<br>step3:如果某个类别的$\sigma_{max} \ge Sigma$并且该类别包含的样本数量$n_i \geq 2n_{min}$,则可以进行分裂操作，前往步骤4，如果不满足上述条件则退分裂操作。<br>step4: 将满足步骤3中的条件的类分为两个子类别并令$K = K +1$,</p>
+<script type="math/tex; mode=display">m_i^{(+)} = m_i+\sigma_{max} ,m_i^{(-)} = m_i-\sigma_{max}</script><p>该算法能够在聚类过程中根据各个类所包含样本的实际情况动态调整聚类中心的数目。如果某个类中样本分散程度较大（通过方差进行衡量）并且样本数量较大，则对其进行分裂操作；如果某两个类别靠得比较近（通过聚类中心的距离衡量），则对它们进行合并操作。</p>
 </blockquote>
 
       
@@ -788,7 +790,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">16.8k</span>
+    <span title="Site words total count">14.4k</span>
   
 </div>
 
